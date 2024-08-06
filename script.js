@@ -5,33 +5,47 @@ document.addEventListener('DOMContentLoaded', function() {
         languageSelect.addEventListener('change', function() {
             const language = this.value;
             if (language === 'en') {
-                window.location.href = 'https://bamboostreet.github.io/portfolio/'; // 영어 페이지 URL
+                window.location.href = 'https://bamboostreet.github.io/portfolio/';
             } else if (language === 'kr') {
-                window.location.href = 'https://bamboostreet.github.io/portfolio_KR/'; // 한국어 페이지 URL
+                window.location.href = 'https://bamboostreet.github.io/portfolio_KR/';
             } else {
-                window.location.href = 'https://bamboostreet.github.io/portfolio_JPN/'; // 일본어 페이지 URL
+                window.location.href = 'https://bamboostreet.github.io/portfolio_JPN/';
             }
         });
     }
 
     // 수정된 카드 기능
-    const cardContents = document.querySelectorAll('.card-content');
+    const cards = document.querySelectorAll('.card');
     
-    cardContents.forEach(cardContent => {
-        cardContent.addEventListener('mouseenter', function() {
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
             const reveal = this.querySelector('.card-reveal');
             if (reveal) {
                 const revealHeight = reveal.offsetHeight;
-                this.style.paddingBottom = `${revealHeight}px`;
-                reveal.style.transform = 'translateY(0)';
+                this.classList.add('active');
+                this.style.marginBottom = `${revealHeight + 16}px`; // 16px는 기존 여백
+
+                // 아래의 모든 카드들을 아래로 이동
+                let nextCard = this.nextElementSibling;
+                while (nextCard) {
+                    nextCard.style.transform = `translateY(${revealHeight}px)`;
+                    nextCard = nextCard.nextElementSibling;
+                }
             }
         });
         
-        cardContent.addEventListener('mouseleave', function() {
+        card.addEventListener('mouseleave', function() {
             const reveal = this.querySelector('.card-reveal');
             if (reveal) {
-                this.style.paddingBottom = '';
-                reveal.style.transform = 'translateY(100%)';
+                this.classList.remove('active');
+                this.style.marginBottom = '';
+
+                // 아래의 모든 카드들을 원위치로
+                let nextCard = this.nextElementSibling;
+                while (nextCard) {
+                    nextCard.style.transform = '';
+                    nextCard = nextCard.nextElementSibling;
+                }
             }
         });
     });
