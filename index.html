@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kr">
 
 <head>
   <title>devfolio</title>
@@ -129,8 +129,9 @@
       <select id="languageSelect">
           <option value="jp">日本語</option>
           <option value="en">English</option>
+          <option value="kr">한국어</option>
       </select>
-      <span class="language-description">ここで言語を変更できます！</span>
+      <span class="language-description">여기에서 언어를 변경할 수 있습니다！</span>
   </div>
   <!-- 드롭다운시 다른 설정해둔 다른 언어 사이트로 이동 --> 
   <script>
@@ -139,8 +140,12 @@
         const language = this.value;
         if (language === 'en') {
             window.location.href = 'https://bamboostreet.github.io/portfolio/'; // 영어 페이지 URL
-        } else {
-            window.location.href = 'https://bamboostreet.github.io/portfolio_JPN/'; // 영어(기본) 페이지 URL
+        } 
+        if (language === 'kr'){
+          window.location.href = 'https://bamboostreet.github.io/portfolio_KR/'; // 한국어 페이지 URL
+        }
+        else {
+            window.location.href = 'https://bamboostreet.github.io/portfolio_JPN/'; // 일본어 페이지 URL
         }
     });
   </script>
@@ -187,7 +192,7 @@
         <div class="columns has-text-centered">
           <div class="column">
             <h1 class="title is-1">
-              ホン ソクジュ(Hong SeokJoo)
+              홍석주
             </h1>
             <h2 class="subtitle">
               AI/ML Developer
@@ -202,13 +207,13 @@
     <div class="container">
       <h1 class="title">About Me</h1>
       <hr />
-      <p>データサイエンスを専攻する大学生として、私は数理統計学、機械学習、人工知能に関する強固な基礎を築いてきました。授業を通じて、データ分析とAIアルゴリズムの実装にPythonを使用した実践的な経験を積んできました。特に自然言語データと自然言語処理モデルに興味があり、LangChainやHuggingfaceなどの人気のあるNLPライブラリを活用して、言語モデリングに関連するいくつかのプロジェクトを完了しました。
-        最近では、クラウドサービスに関する経験を発展させることに努めています。AWSとGCPの基本的な概念を理解しており、NLPアプリケーションのコンテナ化にDockerを使用した経験があります。クラウドベースのデータ処理とETLパイプラインに関する知識を広げているところです。
+      <p>데이터 과학을 전공하는 대학생으로서 저는 수리 통계학, 기계 학습, 인공지능에 대한 탄탄한 기초를 쌓았습니다. 수업을 통해 데이터 분석과 AI 알고리즘을 구현하기 위해 파이썬을 사용한 실무 경험을 쌓았습니다. 특히 자연어 데이터와 자연어 처리 모델에 관심이 많아 LangChain, Huggingface 등 인기 있는 NLP 라이브러리를 활용하여 언어 모델링과 관련된 여러 프로젝트를 완료했습니다.
+        최근에는 클라우드 서비스에 대한 경험을 쌓기 위해 노력하고 있으며, AWS와 GCP의 기본 개념을 이해하고 NLP 애플리케이션을 컨테이너화하기 위해 Docker를 사용한 경험이 있다. 클라우드 기반 데이터 처리 및 ETL 파이프라인에 대한 지식을 넓혀가고 있습니다.
       </p>
       <br>
       <p>
-        チャレンジ精神を活かし、文系から理系へ大胆に転換しました。新しい技術や方法論については、YouTube、オープンチャット、公式ドキュメントなどを活用し、迅速な情報収集と適用に努めています。
-        誰もが初めから満足のいく成果を出すのは難しいということをよく理解しています。そのため、非効率的な方法に固執せず、周囲の人々に積極的に質問し、学ぶ姿勢を重視しています。
+        새로운 기술이나 방법론에 대해서는 유튜브, 오픈채팅, 공식 문서 등을 활용하여 빠른 정보 수집과 적용을 위해 노력하고 있습니다.
+        누구나 처음부터 만족스러운 성과를 내기 어렵다는 것을 잘 알고 있습니다. 그래서 비효율적인 방법을 고집하지 않고, 주변 사람들에게 적극적으로 질문하고 배우는 자세를 중요시하고 있습니다.
       </p>
     </div>
   </section>
@@ -226,24 +231,21 @@
               </figure>
             </div>
             <div class="media-content">
-              <p class="title is-4">世宗大学校 </p>
+              <p class="title is-4">세종대학교 </p>
             </div>
           </div>
           <div class="content">
             <p class="subtitle is-6 education-item">
-              <span>国語学・韓国文学（前専攻）</span>
-              <span class="date">2019.03 - 2020.03</span> 
+              <strong>국어국문학과 </strong>
+              <span class="date">2019.03 - 2022.03</span> 
             </p>
             <p class="subtitle is-6 education-item">
-              <span>兵役のため休学</span>
+              <strong>군복무로 인한 휴학</strong>
               <span class="date">2020.03 - 2021.09</span>
           </p>
-          <p class="subtitle is-6 education-item">
-              <span>データサイエンス理学士</span>
-              <span class="date">2021.09 - 2025.02</span>
-          </p>
-          <p class="subtitle is-6 education-item">
-            <span= class = "date">（卒業予定）</span>
+            <p class="subtitle is-6 education-item">
+              <strong>데이터사이언스학과</strong>
+              <span class="date">2022.03 - 2025.02</span>
           </p>
           </div>
           <div class="content">
@@ -253,17 +255,15 @@
       <div class="card card-gap">
         <div class="card-content">
           <div class="content">
-            <p class="title is-4">SAI（人工知能学術サークル）</p>
+            <p class="title is-4">SAI</p>
               <p class="subtitle is-6"><time datetime="2015-9">2022.03</time> ~ <time
-                datetime="2015-9">現在</time></p>
+                datetime="2015-9">2024.06</time></p>
           </div>
           <div class="content">
-            キャンパス内の学術サークル
+            교내 인공지능 학술 동아리
             <ul>
-              <li>ML/NLP研究論文に関する週次プレゼンテーションとディスカッションに参加。</li>
-              <li>学期を通じて研究テーマに関連したプロジェクトを実施し、学期末シンポジウムで成果を発表。</li>
-              <li>最先端技術を探求し、通常の授業を超えた知識を拡大。</li>
-              <li>ピアと協力して知識共有セッションを組織し、参加。</li>
+              <li>ML/NLP 연구 논문에 대한 주간 프레젠테이션 발표 및 토론 참여. </li>
+              <li>한 학기 동안 스터디 주제와 관련된 프로젝트를 수행하고, 학기말 학술 대회에서 결과 발표</li>
             </ul>
           </div>
         </div>
@@ -271,16 +271,16 @@
       <div class="card card-gap">
         <div class="card-content">
           <div class="content">
-            <p class="title is-4">ソウル大学AIブートキャンプ</p>
+            <p class="title is-4">OUTTA</p>
             <p class="subtitle is-6"><time datetime="2015-9">2022.06</time> - <time
                 datetime="2015-9">2022.08</time></p>
           </div>
           <div class="content">
-            ソウル大学AIサークル夏期ブートキャンプ。
+            서울대학교 AI 교육 단체 여름 부트캠프
             <ul>
-              <li>微積分学、線形代数学、統計学理論。</li>
-              <li>基本的な機械学習、深層学習理論</li>
-              <li>YOLOとBERTを活用した顔認識および感情分析のミニプロジェクト実施</li>
+              <li>미적분학, 선형대수학, 통계학 이론</li>
+              <li>기초 머신러닝, 딥러닝 이론</li>
+              <li>YOLO와 BERT를 활용한 얼굴 인식 및 감정 분석 미니 프로젝트 수행</li>
             </ul>
           </div>
         </div>
@@ -301,18 +301,18 @@
               </figure>
             </div>
             <div class="media-content">
-              <p class="title is-4">ETRI（韓国電子通信研究院）</p>
-              <p class="subtitle is-6">言語知能研究室 - 研究インターン <time datetime="2018-1">2023.06</time> - <time
+              <p class="title is-4">ETRI (한국전자통신연구원)</p>
+              <p class="subtitle is-6">언어지능연구실 - 연구연수생 <time datetime="2018-1">2023.06</time> - <time
                   datetime="2019-9">2023.08</time> </p>
             </div>
           </div>
           <div class="content">
-            <p>専門家に判断の理由・根拠を説明できる専門家意思決定支援AI技術の開発のための国家研究プロジェクトに参加。
+            <p>전문가에게 판단의 이유와 근거를 설명할 수 있는 전문가 의사결정 지원 AI 기술 개발을 위한 국가 연구 프로젝트에 참여.
             </p>
             <ul>
-              <li>説明的な質問応答の訓練データの構築と検証、およびデータ分析。</li>
-              <li>ChatGPTを基にしたデータ生成と検証。</li>
-              <li>T5ベースの検索モデルを訓練するためのデータベース構築。</li>
+              <li>설명적 질문 응답 훈련 데이터 구축 및 검증, 데이터 분석.</li>
+              <li>ChatGPT를 기반으로 한 데이터 생성 및 검증.</li>
+              <li>T5 기반 검색 모델 학습을 위한 데이터베이스 구축.</li>
             </ul>
             <div class="tags">
             </div>
@@ -333,7 +333,7 @@
               <article class="tile is-child notification">
                 <p class="title">SejongMate</p>
                 <p class="subtitle is-6">2023.03~2023.06</p>
-                <p class="subtitle is-6">LLMを用いた大学チャットボットの開発</p>
+                <p class="subtitle is-6">LLM을 활용한 대학 챗봇 개발</p>
                 <figure class="image is-3by2">
                   <img class="modal-trigger" data-target="project-1-modal" src="img/sejongmate-logo.png">
                 </figure>
@@ -342,8 +342,8 @@
             <div class="tile is-parent">
               <article class="tile is-child notification">
                 <p class="title">Foreign AICC</p>
-                <p class="subtitle is-6">2024.06~</p>
-                <p class="subtitle is-6">国内外国人労働者向けAIコンタクトセンター</p>
+                <p class="subtitle is-6">2024.06~2024.08</p>
+                <p class="subtitle is-6">국내 외국인 근로자를 위한 AICC(AI Contact Center)</p>
                 <figure class="image is-4by3">
                   <img class="modal-trigger" data-target="project-3-modal" src="img/HelloWorld-logo2.png">
                 </figure>
@@ -352,7 +352,7 @@
           </div>
         </div>
       </div>
-      <p class="subtitle">詳細な説明を見るには画像をクリックしてください</p>
+      <p class="subtitle">자세한 설명을 보려면 이미지를 클릭하세요.</p>
     </div>
   </section>
 
@@ -367,7 +367,7 @@
               <article class="tile is-child notification">
                 <p class="title">터벌림</p>
                 <p class="subtitle is-6">2019.03~2024.03</p>
-                <p class="subtitle is-6">伝統的な韓国楽器の演奏</p>
+                <p class="subtitle is-6">교내 사물놀이 동아리</p>
                 <figure class="image is-4by3">
                   <img class="modal-trigger" data-target="TBL-modal" src="img/TBL/TBL-1.jpg">
                 </figure>
@@ -375,9 +375,9 @@
             </div>
             <div class="tile is-parent">
               <article class="tile is-child notification">
-                <p class="title">兵役</p>
+                <p class="title">병역</p>
                 <p class="subtitle is-6">2020.03~2021.09</p>
-                <p class="subtitle is-6">GOP（一般前哨基地）で義務兵役を終了</p>
+                <p class="subtitle is-6">GOP에서 의무복무</p>
                 <figure class="image is-4by3">
                   <img class="modal-trigger" data-target="Military-Service-modal" src="img/Military-logo.jpg">
                 </figure>
