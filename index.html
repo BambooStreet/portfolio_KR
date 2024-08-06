@@ -35,82 +35,108 @@
       white-space: nowrap;
     }
 
-  /* 프로젝트 카드 부분 */
-    .project-content {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    gap: 20px;
-  }
-
-  .project-content .image {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain; /* 이미지 비율 유지 */
-  }
-
-  .project-content .content {
-    padding: 0 20px;
-  }
-
-  .modal-card {
-    width: 80vw; /* 뷰포트 너비의 80% */
-    max-width: 960px; /* 최대 너비 설정 */
-    height: 90vh; /* 뷰포트 높이의 90% */
-    max-height: 90vh; /* 최대 높이 설정 */
-  }
-
-  .modal-card-body {
-    max-height: calc(90vh - 120px); /* 헤더와 푸터 높이를 고려하여 조정 */
-    overflow-y: auto; /* 내용이 넘칠 경우 스크롤 표시 */
-  }
-
-  /* 반응형 스타일 */
-  @media screen and (max-width: 768px) {
-    .modal-card {
-      width: 95vw;
-      height: 95vh;
+    /* 프로젝트 카드 부분 */
+    .card-content {
+      position: relative;
+      overflow: hidden;
     }
-  }
 
-  .poster-container {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 20px;
-    height: 50vh;  /* 뷰포트 높이의 50%를 차지하도록 설정 */
-  }
-  .poster-pdf {
-    flex: 1;
-    margin-right: 20px;
-    height: 100%;  /* 컨테이너의 전체 높이를 사용 */
-  }
-  .poster-description {
-    flex: 1;
-    overflow-y: auto;  /* 내용이 넘치면 스크롤 가능하도록 */
-    height: 100%;  /* 컨테이너의 전체 높이를 사용 */
-  }
-  .poster-pdf iframe {
-    width: 100%;
-    height: 100%;  /* PDF가 컨테이너를 꽉 채우도록 */
-    border: none;
-  }
-  
-  @media (max-width: 768px) {
-    .poster-container {
+    .card-reveal {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: white;
+      padding: 1rem;
+      transform: translateY(100%);
+      transition: transform 0.3s ease-in-out;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    }
+
+    .card-content:hover .card-reveal {
+      transform: translateY(0);
+    }
+
+    .card-gap {
+      margin-bottom: 2rem;
+    }
+
+
+    .project-content {
+      display: flex;
       flex-direction: column;
-      height: auto;  /* 모바일에서는 자동 높이 */
+      gap: 30px;
+      gap: 20px;
+    }
+
+    .project-content .image {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain; /* 이미지 비율 유지 */
+    }
+
+    .project-content .content {
+      padding: 0 20px;
+    }
+
+    .modal-card {
+      width: 80vw; /* 뷰포트 너비의 80% */
+      max-width: 960px; /* 최대 너비 설정 */
+      height: 90vh; /* 뷰포트 높이의 90% */
+      max-height: 90vh; /* 최대 높이 설정 */
+    }
+
+    .modal-card-body {
+      max-height: calc(90vh - 120px); /* 헤더와 푸터 높이를 고려하여 조정 */
+      overflow-y: auto; /* 내용이 넘칠 경우 스크롤 표시 */
+    }
+
+    /* 반응형 스타일 */
+    @media screen and (max-width: 768px) {
+      .modal-card {
+        width: 95vw;
+        height: 95vh;
+      }
+    }
+
+    .poster-container {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      height: 50vh;  /* 뷰포트 높이의 50%를 차지하도록 설정 */
     }
     .poster-pdf {
-      margin-right: 0;
-      margin-bottom: 20px;
-      height: 50vh;  /* 모바일에서 포스터 높이를 뷰포트의 50%로 */
+      flex: 1;
+      margin-right: 20px;
+      height: 100%;  /* 컨테이너의 전체 높이를 사용 */
     }
     .poster-description {
-      height: auto;  /* 설명 부분은 내용에 맞게 자동 조절 */
+      flex: 1;
+      overflow-y: auto;  /* 내용이 넘치면 스크롤 가능하도록 */
+      height: 100%;  /* 컨테이너의 전체 높이를 사용 */
     }
-  }
+    .poster-pdf iframe {
+      width: 100%;
+      height: 100%;  /* PDF가 컨테이너를 꽉 채우도록 */
+      border: none;
+    }
+  
+    @media (max-width: 768px) {
+      .poster-container {
+        flex-direction: column;
+        height: auto;  /* 모바일에서는 자동 높이 */
+      }
+      .poster-pdf {
+        margin-right: 0;
+        margin-bottom: 20px;
+        height: 50vh;  /* 모바일에서 포스터 높이를 뷰포트의 50%로 */
+      }
+      .poster-description {
+        height: auto;  /* 설명 부분은 내용에 맞게 자동 조절 */
+      }
+    }
 
-  pre {
+    pre {
             background-color: #f4f4f4;
             padding: 10px;
             border-radius: 5px;
@@ -133,23 +159,8 @@
           
       </select>
       <span class="language-description">여기에서 언어를 변경할 수 있습니다！</span>
-  </div>
-  <!-- 드롭다운시 다른 설정해둔 다른 언어 사이트로 이동 --> 
-  <script>
-    const languageSelect = document.getElementById('languageSelect');
-    languageSelect.addEventListener('change', function() {
-        const language = this.value;
-        if (language === 'en') {
-            window.location.href = 'https://bamboostreet.github.io/portfolio/'; // 영어 페이지 URL
-        } 
-        if (language === 'kr'){
-          window.location.href = 'https://bamboostreet.github.io/portfolio_KR/'; // 한국어 페이지 URL
-        }
-        else {
-            window.location.href = 'https://bamboostreet.github.io/portfolio_JPN/'; // 일본어 페이지 URL
-        }
-    });
-  </script>
+    </div>
+  
 
     <div class="navbar-brand">
       <div class="navbar-item is-hidden-desktop">
@@ -208,8 +219,9 @@
     <div class="container">
       <h1 class="title">About Me</h1>
       <hr />
-      <p>데이터 과학을 전공하는 대학생으로서 저는 수리 통계학, 기계 학습, 인공지능에 대한 탄탄한 기초를 쌓았습니다. 수업을 통해 데이터 분석과 AI 알고리즘을 구현하기 위해 파이썬을 사용한 실무 경험을 쌓았습니다. 특히 자연어 데이터와 자연어 처리 모델에 관심이 많아 LangChain, Huggingface 등 인기 있는 NLP 라이브러리를 활용하여 언어 모델링과 관련된 여러 프로젝트를 완료했습니다.
-        최근에는 클라우드 서비스에 대한 경험을 쌓기 위해 노력하고 있으며, AWS와 GCP의 기본 개념을 이해하고 NLP 애플리케이션을 컨테이너화하기 위해 Docker를 사용한 경험이 있다. 클라우드 기반 데이터 처리 및 ETL 파이프라인에 대한 지식을 넓혀가고 있습니다.
+      <p>데이터사이언스를 전공하며 통계학, 기계학습, 인공지능에 대한 탄탄한 기초를 쌓았습니다. 
+        특히 자연어 데이터와 자연어 처리 모델에 관심이 많아 LangChain, Huggingface 등 인기 있는 NLP 라이브러리를 활용하여 언어 모델링과 관련된 여러 프로젝트를 완료했습니다.
+        최근에는 클라우드 서비스에 대한 경험을 쌓기 위해 노력하고 있으며, AWS와 GCP의 기본 개념을 이해하고 클라우드 기반 데이터 처리 및 ETL 파이프라인에 대한 지식을 넓혀가고 있습니다.
       </p>
       <br>
       <p>
@@ -223,7 +235,8 @@
     <div class="container">
       <h1 class="title">Education / Training</h1>
       <hr />
-      <div class="card">
+
+      <div class="card card-gap">
         <div class="card-content">
           <div class="media">
             <div class="media-left">
@@ -233,32 +246,44 @@
             </div>
             <div class="media-content">
               <p class="title is-4">세종대학교 </p>
+              <p class="subtitle is-6"><time datetime="2015-9">2019.03</time> ~ <time
+                datetime="2015-9">2025.02</time></p>
             </div>
           </div>
           <div class="content">
             <p class="subtitle is-6 education-item">
-              <strong>국어국문학과 </strong>
+              <span>국어국문학과 </span>
               <span class="date">2019.03 - 2022.03</span> 
             </p>
             <p class="subtitle is-6 education-item">
-              <strong>군복무로 인한 휴학</strong>
+              <span>군복무로 인한 휴학</span>
               <span class="date">2020.03 - 2021.09</span>
-          </p>
-            <p class="subtitle is-6 education-item">
-              <strong>데이터사이언스학과</strong>
+            </p>
+              <p class="subtitle is-6 education-item">
+              <span>데이터사이언스학과</span>
               <span class="date">2022.03 - 2025.02</span>
-          </p>
+            </p>
           </div>
-          <div class="content">
+          <div class="card-reveal">
+            <p class="title is-4">자세한 설명</p>
+            <p>여기에 프로젝트에 대한 자세한 설명을 작성합니다.</p>
           </div>
         </div>
       </div>
+
       <div class="card card-gap">
         <div class="card-content">
-          <div class="content">
-            <p class="title is-4">SAI</p>
-              <p class="subtitle is-6"><time datetime="2015-9">2022.03</time> ~ <time
-                datetime="2015-9">2024.06</time></p>
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img src="img/SAI-logo.png" alt="Placeholder image">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">SAI </p>
+                <p class="subtitle is-6"><time datetime="2015-9">2022.03</time> ~ <time
+                  datetime="2015-9">2024.06</time></p>
+            </div>
           </div>
           <div class="content">
             교내 인공지능 학술 동아리
@@ -267,22 +292,38 @@
               <li>한 학기 동안 스터디 주제와 관련된 프로젝트를 수행하고, 학기말 학술 대회에서 결과 발표</li>
             </ul>
           </div>
+          <div class="card-reveal">
+            <p class="title is-4">자세한 설명</p>
+            <p>여기에 프로젝트에 대한 자세한 설명을 작성합니다.</p>
+          </div>
         </div>
       </div>
+
       <div class="card card-gap">
         <div class="card-content">
-          <div class="content">
-            <p class="title is-4">OUTTA</p>
-            <p class="subtitle is-6"><time datetime="2015-9">2022.06</time> - <time
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img src="img/OUTTA-logo.png" alt="Placeholder image">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">OUTTA </p>
+              <p class="subtitle is-6"><time datetime="2015-9">2022.06</time> - <time
                 datetime="2015-9">2022.08</time></p>
+            </div>
           </div>
           <div class="content">
-            서울대학교 AI 교육 단체 여름 부트캠프
+            서울대학교 AI 교육단체 여름 부트캠프
             <ul>
               <li>미적분학, 선형대수학, 통계학 이론</li>
               <li>기초 머신러닝, 딥러닝 이론</li>
               <li>YOLO와 BERT를 활용한 얼굴 인식 및 감정 분석 미니 프로젝트 수행</li>
             </ul>
+          </div>
+          <div class="card-reveal">
+            <p class="title is-4">자세한 설명</p>
+            <p>여기에 프로젝트에 대한 자세한 설명을 작성합니다.</p>
           </div>
         </div>
       </div>
@@ -834,7 +875,8 @@
     </div>
   </footer>
 
-  <script src="js/bundle.js"></script>
+<script src="js/bundle.js"></script>
+<script src="scripts.js"></script>
 </body>
 
 </html>
