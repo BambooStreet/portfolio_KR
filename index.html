@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>devfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/main.bundle.css">
+  <script src="https://kit.fontawesome.com/4e5a72c756.js"></script>
+  <style>
+    .en { display: block; }
+    .jp { display: none; }
+    .language-selector {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    #languageSelect {
+        padding: 5px;
+        font-size: 14px;
+        margin-right: 10px;
+    }
+    .language-description {
+        font-size: 18px;  /* 이 부분만 크기를 키웠습니다 */
+        color: #f0f0f0;
+    }
+    .education-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+    
+    .date {
+      margin-left: auto;
+      white-space: nowrap;
+    }
+
+  /* 프로젝트 카드 부분 */
+    .project-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    gap: 20px;
+  }
+
+  .project-content .image {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain; /* 이미지 비율 유지 */
+  }
+
+  .project-content .content {
+    padding: 0 20px;
+  }
+
+  .modal-card {
+    width: 80vw; /* 뷰포트 너비의 80% */
+    max-width: 960px; /* 최대 너비 설정 */
+    height: 90vh; /* 뷰포트 높이의 90% */
+    max-height: 90vh; /* 최대 높이 설정 */
+  }
+
+  .modal-card-body {
+    max-height: calc(90vh - 120px); /* 헤더와 푸터 높이를 고려하여 조정 */
+    overflow-y: auto; /* 내용이 넘칠 경우 스크롤 표시 */
+  }
+
+  /* 반응형 스타일 */
+  @media screen and (max-width: 768px) {
+    .modal-card {
+      width: 95vw;
+      height: 95vh;
+    }
+  }
+
+  .poster-container {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    height: 50vh;  /* 뷰포트 높이의 50%를 차지하도록 설정 */
+  }
+  .poster-pdf {
+    flex: 1;
+    margin-right: 20px;
+    height: 100%;  /* 컨테이너의 전체 높이를 사용 */
+  }
+  .poster-description {
+    flex: 1;
+    overflow-y: auto;  /* 내용이 넘치면 스크롤 가능하도록 */
+    height: 100%;  /* 컨테이너의 전체 높이를 사용 */
+  }
+  .poster-pdf iframe {
+    width: 100%;
+    height: 100%;  /* PDF가 컨테이너를 꽉 채우도록 */
+    border: none;
+  }
+  
+  @media (max-width: 768px) {
+    .poster-container {
+      flex-direction: column;
+      height: auto;  /* 모바일에서는 자동 높이 */
+    }
+    .poster-pdf {
+      margin-right: 0;
+      margin-bottom: 20px;
+      height: 50vh;  /* 모바일에서 포스터 높이를 뷰포트의 50%로 */
+    }
+    .poster-description {
+      height: auto;  /* 설명 부분은 내용에 맞게 자동 조절 */
+    }
+  }
+
+  pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+  </style>
+</head>
+
+<body>
+  <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+    
+    <!-- 언어 드롭다운 -->
+    <div class="language-selector">
+      <select id="languageSelect">
+          <option value="jp">日本語</option>
+          <option value="en">English</option>
+      </select>
+      <span class="language-description">ここで言語を変更できます！</span>
+  </div>
+  <!-- 드롭다운시 다른 설정해둔 다른 언어 사이트로 이동 --> 
+  <script>
+    const languageSelect = document.getElementById('languageSelect');
+    languageSelect.addEventListener('change', function() {
+        const language = this.value;
+        if (language === 'en') {
+            window.location.href = 'https://bamboostreet.github.io/portfolio/'; // 영어 페이지 URL
+        } else {
+            window.location.href = 'https://bamboostreet.github.io/portfolio_JPN/'; // 영어(기본) 페이지 URL
+        }
+    });
+  </script>
+
+    <div class="navbar-brand">
+      <div class="navbar-item is-hidden-desktop">
+        <a href="https://github.com/BambooStreet" class="icon is-large has-text-light">
+          <i class="fab fa-2x fa-github"></i>
+        </a>
+      </div>
+      <div class="navbar-item is-hidden-desktop">
+        <a href="https://bamboostreet.github.io/" class="icon is-large has-text-light">
+          <i class="fas fa-2x fa-globe"></i>
+        </a>
+      </div>
+    <div class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a href="https://github.com/BambooStreet" class="icon is-large has-text-light">
+            <i class="fab fa-2x fa-github"></i>
+          </a>
+        </div>
+        <div class="navbar-item">
+          <a href="https://bamboostreet.github.io/" class="icon is-large has-text-light">
+            <i class="fas fa-2x fa-globe"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  
+
+  <section class="hero is-primary">
+    <div class="hero-body">
+      <div class="container">
+        <div class="level">
+          <div class="level-item has-text-centered">
+            <figure class="image is-128x128">
+              <img class="is-rounded" src="img/me-cut.jpg">
+            </figure>
+          </div>
+        </div>
+        <div class="columns has-text-centered">
+          <div class="column">
+            <h1 class="title is-1">
+              ホン ソクジュ(Hong SeokJoo)
+            </h1>
+            <h2 class="subtitle">
+              AI/ML Developer
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="title">About Me</h1>
+      <hr />
+      <p>データサイエンスを専攻する大学生として、私は数理統計学、機械学習、人工知能に関する強固な基礎を築いてきました。授業を通じて、データ分析とAIアルゴリズムの実装にPythonを使用した実践的な経験を積んできました。特に自然言語データと自然言語処理モデルに興味があり、LangChainやHuggingfaceなどの人気のあるNLPライブラリを活用して、言語モデリングに関連するいくつかのプロジェクトを完了しました。
+        最近では、クラウドサービスに関する経験を発展させることに努めています。AWSとGCPの基本的な概念を理解しており、NLPアプリケーションのコンテナ化にDockerを使用した経験があります。クラウドベースのデータ処理とETLパイプラインに関する知識を広げているところです。
+      </p>
+      <br>
+      <p>
+        チャレンジ精神を活かし、文系から理系へ大胆に転換しました。新しい技術や方法論については、YouTube、オープンチャット、公式ドキュメントなどを活用し、迅速な情報収集と適用に努めています。
+        誰もが初めから満足のいく成果を出すのは難しいということをよく理解しています。そのため、非効率的な方法に固執せず、周囲の人々に積極的に質問し、学ぶ姿勢を重視しています。
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Education / Training</h1>
+      <hr />
+      <div class="card">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img src="img/sejong-logo.svg" alt="Placeholder image">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">世宗大学校 </p>
+            </div>
+          </div>
+          <div class="content">
+            <p class="subtitle is-6 education-item">
+              <span>国語学・韓国文学（前専攻）</span>
+              <span class="date">2019.03 - 2020.03</span> 
+            </p>
+            <p class="subtitle is-6 education-item">
+              <span>兵役のため休学</span>
+              <span class="date">2020.03 - 2021.09</span>
+          </p>
+          <p class="subtitle is-6 education-item">
+              <span>データサイエンス理学士</span>
+              <span class="date">2021.09 - 2025.02</span>
+          </p>
+          <p class="subtitle is-6 education-item">
+            <span= class = "date">（卒業予定）</span>
+          </p>
+          </div>
+          <div class="content">
+          </div>
+        </div>
+      </div>
+      <div class="card card-gap">
+        <div class="card-content">
+          <div class="content">
+            <p class="title is-4">SAI（人工知能学術サークル）</p>
+              <p class="subtitle is-6"><time datetime="2015-9">2022.03</time> ~ <time
+                datetime="2015-9">現在</time></p>
+          </div>
+          <div class="content">
+            キャンパス内の学術サークル
+            <ul>
+              <li>ML/NLP研究論文に関する週次プレゼンテーションとディスカッションに参加。</li>
+              <li>学期を通じて研究テーマに関連したプロジェクトを実施し、学期末シンポジウムで成果を発表。</li>
+              <li>最先端技術を探求し、通常の授業を超えた知識を拡大。</li>
+              <li>ピアと協力して知識共有セッションを組織し、参加。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="card card-gap">
+        <div class="card-content">
+          <div class="content">
+            <p class="title is-4">ソウル大学AIブートキャンプ</p>
+            <p class="subtitle is-6"><time datetime="2015-9">2022.06</time> - <time
+                datetime="2015-9">2022.08</time></p>
+          </div>
+          <div class="content">
+            ソウル大学AIサークル夏期ブートキャンプ。
+            <ul>
+              <li>微積分学、線形代数学、統計学理論。</li>
+              <li>基本的な機械学習、深層学習理論</li>
+              <li>YOLOとBERTを活用した顔認識および感情分析のミニプロジェクト実施</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Experience</h1>
+      <hr />
+      <div class="card">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img src="img/ETRI-logo.png" alt="Placeholder image">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">ETRI（韓国電子通信研究院）</p>
+              <p class="subtitle is-6">言語知能研究室 - 研究インターン <time datetime="2018-1">2023.06</time> - <time
+                  datetime="2019-9">2023.08</time> </p>
+            </div>
+          </div>
+          <div class="content">
+            <p>専門家に判断の理由・根拠を説明できる専門家意思決定支援AI技術の開発のための国家研究プロジェクトに参加。
+            </p>
+            <ul>
+              <li>説明的な質問応答の訓練データの構築と検証、およびデータ分析。</li>
+              <li>ChatGPTを基にしたデータ生成と検証。</li>
+              <li>T5ベースの検索モデルを訓練するためのデータベース構築。</li>
+            </ul>
+            <div class="tags">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Projects</h1>
+      <hr />
+      <div class="tile is-ancestor">
+        <div class="tile is-vertical is-12">
+          <div class="tile">
+            <div class="tile is-parent">
+              <article class="tile is-child notification">
+                <p class="title">SejongMate</p>
+                <p class="subtitle is-6">2023.03~2023.06</p>
+                <p class="subtitle is-6">LLMを用いた大学チャットボットの開発</p>
+                <figure class="image is-3by2">
+                  <img class="modal-trigger" data-target="project-1-modal" src="img/sejongmate-logo.png">
+                </figure>
+              </article>
+            </div>
+            <div class="tile is-parent">
+              <article class="tile is-child notification">
+                <p class="title">Foreign AICC</p>
+                <p class="subtitle is-6">2024.06~</p>
+                <p class="subtitle is-6">国内外国人労働者向けAIコンタクトセンター</p>
+                <figure class="image is-4by3">
+                  <img class="modal-trigger" data-target="project-3-modal" src="img/HelloWorld-logo2.png">
+                </figure>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="subtitle">詳細な説明を見るには画像をクリックしてください</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Extra-Curricular Activities</h1>
+      <hr />
+      <div class="tile is-ancestor">
+        <div class="tile is-vertical is-12">
+          <div class="tile">
+            <div class="tile is-parent">
+              <article class="tile is-child notification">
+                <p class="title">터벌림</p>
+                <p class="subtitle is-6">2019.03~2024.03</p>
+                <p class="subtitle is-6">伝統的な韓国楽器の演奏</p>
+                <figure class="image is-4by3">
+                  <img class="modal-trigger" data-target="TBL-modal" src="img/TBL/TBL-1.jpg">
+                </figure>
+              </article>
+            </div>
+            <div class="tile is-parent">
+              <article class="tile is-child notification">
+                <p class="title">兵役</p>
+                <p class="subtitle is-6">2020.03~2021.09</p>
+                <p class="subtitle is-6">GOP（一般前哨基地）で義務兵役を終了</p>
+                <figure class="image is-4by3">
+                  <img class="modal-trigger" data-target="Military-Service-modal" src="img/Military-logo.jpg">
+                </figure>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Contact</h1>
+      <hr />
+      <nav class="level">
+        <div class="level-item has-text-centered">
+          <div>
+            <a href="https://github.com/BambooStreet" class="icon is-large">
+              <i class="fab fa-2x fa-github"></i>
+            </a>
+            <p class="heading"><a href="https://github.com/BambooStreet">github.com/BambooStreet</a></p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <a href="https://bamboostreet.github.io/" class="icon is-large">
+              <i class="fas fa-2x fa-globe"></i>
+            </a>
+            <p class="heading"><a href="https://bamboostreet.github.io/">bamboostreet.github.io</a></p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <a href="mailto:ohmyhong1234@gmail.com" class="icon is-large">
+              <i class="fas fa-2x fa-envelope"></i>
+            </a>
+            <p class="heading"><a href="mailto:ohmyhong1234@gmail.com">ohmyhong1234@gmail.com</a></p>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Modals -->
+  <div id="project-1-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">SejongMate</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <div class="project-content">
+
+          <p class="title">メインポスター</p>
+          <div class="poster-container">
+            <div class="poster-pdf">
+              <iframe src="img/sejongmate-poster-JPN.pdf#toolbar=0&navpanes=0&scrollbar=0" width="300" height="200"></iframe>
+            </div>
+          </div>
+          <p>※すべての成果物は個人ではなく、素晴らしいチームメンバーと共同で作業しました。</p>
+
+          <div class="content">
+            <p>このプロジェクトは、大規模言語モデルを活用した世宗大学のチャットボットです。
+              2023年の学内ソフトウェア創造設計コンテストで2位を獲得しました。
+              以下に、私の主な役割を詳しく説明します。
+            </p>
+          </div>
+          <hr/>
+          <p class="title">私の仕事</p>
+          <p class="subtitle">1. データの収集、クレンジング、および拡張</p>
+          <figure class="image is-4by2">
+            <img src="img/sejongmate-data-1.png">
+          </figure>
+
+          <div class="content">
+            <strong>主な業務</strong>
+            <li>多様なソース（大学コミュニティ、学事内規、ウィキペディア）からデータを収集し、前処理するプロセスを主導しました。</li>
+            <li>クローリング、データクレンジング、拡張などのプロセスを含むデータパイプラインを設計し実装しました。</li>
+            <li>データ拡張、ランダム文順変換、ランダム文削除などの技法を適用し、データの多様性と品質を改善しました。</li>
+            <li>QAペア形式の構造化データを生成し、DBを通じて管理しました。</li>
+            <br>
+            <strong>主な課題と解決策の議論</strong>
+            <br>
+            <p>課題1. 広範囲のクローリングによる核心キーワード選定の困難さ</p>
+              <p>初期データ収集過程でユーザーの需要を把握し、
+                それに合うキーワードを基にデータを収集する必要性を感じました。
+                大学コミュニティの最近の投稿から疑問符で終わる質問を抽出して調査し、
+                さらにアンケート調査を通じてキーワードを見出しました。
+                <br>
+                見出したキーワードと内部会議を通じて必須的に含めるべきキーワードを最終決定し、
+                これを通じて大学コミュニティ、学事内規から情報を抽出してデータを構築、拡張しました。
+              </p>
+
+            <p>課題2. Question-Answerペアデータの生成</p>
+              <p>内部会議を通じてチャットボットの核心機能をユーザークエリと私たちのDBの最も類似した質問との類似度を計算し、
+                それに適した回答を出力することに決めました。
+                これに従ってQuestion-Answerデータを生成する必要があり、プロセスは次の通りでした。
+                <ol>
+                <li>前述の収集した文書をGPT inputに適したチャンク単位に分割</li>
+                <li>GPT-turbo-3.5 apiを活用して前述の収集された文書に対するQuestion生成</li>
+                <li>生成されたQuestion + 文書を入力として信頼性のあるAnswerを生成</li>
+                <li>人間による最終検証</li>
+                </ol>
+                各プロセスには適切なGPTプロンプトを直接作成して効率を高めました。
+                <br>
+              </p>
+
+            <p>課題3. 収集されたデータの限られた多様性</p>
+            <p>理論と異なり、実際のユーザーは期待していた文章とは異なる方法で質問をすることが多いです。
+              例えば、大学名を略したり、科目名を略したりする方法があります。
+              私たちはこれを考慮して、任意に類義語/略語に関する質問データを拡張しました。
+              <br>
+              また、韓国語は語順が変わっても意味が保たれる場合が多いです。
+              私たちはこれを考慮して、文章内の単語をランダムに入れ替えてデータを拡張しました。
+              <br>
+              最終的に拡張されたデータは収集したQAに対して約4万件です。
+            </p>
+              <ol>
+                <li>GPTプロンプトを通じて質問フォーマットを指定し、多様な質問タイプを生成</li>
+                <li>類義語/略語語彙に関する拡張</li>
+                <li>ランダム文順変換および削除による追加データ多様化</li>
+              </ol>
+          </div>
+          
+          <p class="subtitle">2. モデルのデプロイ</p>
+          <figure class="image is-4by3">
+            <img src="img/sejongmate-architecture.png">
+          </figure>
+          <div class="content">
+            <strong>主な業務</strong>
+            <li>AWS EC2を活用したAIモデルのデプロイ。</li>
+            <li>FlaskベースのAPI開発によるモデルデプロイとデータパイプラインの構築。</li>
+            <li>MySQLを使用したリレーショナルデータベースの設計と運用。</li>
+              <br>
+              
+              <strong>主な課題と解決策の議論</strong>
+              <p>課題1. AWS EC2インスタンスの選定</p>
+              <p>EC2インスタンスのコストに適したモデルを選定するプロセスは難しいものでした。私たちに割り当てられた予算は
+                限られており、使用したいモデルは巨大でした。
+                私たちはできるだけ軽量なモデルを使用し、量子化（LoRA）を通じてモデルサイズを縮小し、
+                EC2インスタンスタイプとしてt2.mediumを使用して最大限メモリを増やそうとしました。
+              </p>
+
+              <p>課題2. Flaskを通じたAPIデプロイ</p>
+              <p>LLMをデプロイしバックエンドと連携する作業は、当時情報が少なく難しい作業でした。
+                デプロイ過程での主な考慮事項はモデルの推論時間と出力の視覚化方式でした。
+                私たちは推論時間を
+                私たちは前述のサーバーにアップロードしたモデルをFlaskを通じてAPIとして提供し、Gradioを通じてモデル出力をストリーミング方式で視覚化してクライアントに提供しました。
+                主なプロセスは次の通りです：
+                <ol>
+                  <li>AWSでEC2インスタンスを作成し、必要な環境を設定</li>
+                  <li>モデルをEC2インスタンスにアップロード</li>
+                  <li>Flaskを利用してモデルをAPIとして提供</li>
+                  <li>ユーザーインタラクションのためのGradioインターフェースの活用</li>
+                  <li>GradioインターフェースとFlask APIを接続し、システムテスト</li>
+                </ol>
+              </p>
+          </div>
+
+          <p class="title">Demo</p>
+          <div class="content">
+            <iframe src="https://drive.google.com/file/d/1O388bpBIPwpYgfTPIYRfXR7G93q4MWGq/preview" width="640" height="480" allow="autoplay"></iframe>
+          </div>
+        </div>
+        
+        <div class="tags">
+          <span class="tag">python</span>
+          <span class="tag">aws</span>
+          <span class="tag">gradio</span>
+        </div>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success">Close</button>
+      </footer>
+    </div>
+  </div>
+
+  <div id="project-3-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">ForeignAICC</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        
+        <div class="project-content">
+          <p class="title">メインポスター</p>
+          <div class="poster-container">
+            <div class="poster-pdf">
+              <iframe src="img/foreignAICC-poster-JPN.pdf#toolbar=0&navpanes=0&scrollbar=0" width="300" height="200"></iframe>
+            </div>
+          </div>
+          <p>※すべての成果物は個人ではなく、素晴らしいチームメンバーと共同で作業しました。</p>
+
+          <div class="content">
+            <p>本プロジェクトは、ソウル市が主催する社会問題解決のための生成型AI競技大会に参加しています。
+              私たちのプロジェクトは、増加する外国人労働者に対して減少する外国人労働者支援センターを社会問題として取り上げており、現在、予選を全体4位で通過し、本選に進出した状態です。
+              (8月2日本選大会)
+            </p>
+            
+            <p>主な特徴</p>
+            <ol>
+              <li>外国人労働者が知りたいこと（法律、ビザの質問など）についてチャットボットに相談します。</li>
+              <li>チャットボットはデータに基づいて、法的情報、例、具体的な解決策を提供します。</li>
+              <li>さらなるカウンセリングが必要な場合、アプリ内から直接相談のスケジュールを組むことができます。</li>
+              <li>オフライン相談の労力を減らすため、カウンセラーにチャットの要約を提供し、プロセスをよりスムーズにするのに役立てます。</li>
+            </ol>          
+          </div>
+          <hr/>
+
+          <figure class="image is-4by2">
+            <img src="img/foreignAICC-arc.png">
+          </figure>
+          <strong>モデル全体のアーキテクチャ</strong>
+          
+          <p class="title">My Work</p>
+          <div class="content">
+            <strong>私の仕事</strong>
+            <li>ホームページからテキストをクロール/前処理後、検索(Retrieval)のための文書Chunking/Embeddingを行い保存</li>
+            <li>DPR/BM25などの検索アルゴリズムを活用し、ユーザークエリと関連性の高い文書を返すロジックを構成</li>
+            <li>MySQLデータベースを活用し、顧客とコンサルタントの相互作用から生じるデータを収集・保存します。</li>
+            <li>パイプラインを構築し、生データを処理し、埋め込み（embedding）など分析可能な形式に変換します。</li>
+
+            <br>
+            <strong>主な課題と解決策の議論</strong>
+
+
+            <figure class="image is-4by2">
+              <img src="img/foreignAICC-1.png">
+            </figure>
+            <p>課題1. データ収集と前処理</p>
+              <p> 
+                私たちは、ユーザーの質問を大きく4つのカテゴリーに分類しました（法律、ビザ、相談事例、採用）。
+                私は各カテゴリーごとに政府のウェブサイトやオープンデータポータルからテキストを収集し、構造化された形式に変換しました。
+              </p>
+            <br>
+            <p><データ例></p>
+            
+            <pre id="json-display-1"></pre>
+            <pre id="json-display-2"></pre>
+
+            <script>
+                const jsonData1 = {
+                    "カテゴリー": "個人再生、破産および免責 - 破産および免責",
+                    "タイトル": "破産財団",
+                    "質問": "破産財団とは何ですか？",
+                    "回答": "破産財団とは、破産宣告時に債務者が有するすべての財産を指します（債務者の回生及び破産に関する法律第382条第1項）。"
+                };
+
+                const jsonData2 = {
+                    "事件名": "損害賠償（基）",
+                    "判決タイトル": "大法院 2021. 6. 10. 宣告 2021다205490 判決",
+                    "裁判所": "大法院",
+                    "判決日": "2021-06-10",
+                    "事件番号": "2021다205490",
+                    "判決要旨": {
+                        "質問": "落札金額が仮想競争価格に下落した場合、それに伴い官給資材等の分離発注対象金額も減少しますか？",
+                        "回答": "否定",
+                        "要約": "その判示のような理由を挙げて、落札金額が仮想競争価格に下落した場合、それに伴い官給資材等の分離発注対象金額も減少するという被告の主張を退けた。",
+                        "キーセンテンス": "落札金額が仮想競争価格に下落した場合、官給資材等の分離発注対象金額も減少するという被告の主張を退けた。"
+                    },
+                    "キーワード": ["被告", "主張"],
+                    "参照法令": "損害賠償",
+                    "参照判例": "",
+                    "分類": "労働者 - 損害賠償"
+                };
+
+                document.getElementById('json-display-1').textContent = JSON.stringify(jsonData1, null, 2);
+                document.getElementById('json-display-2').textContent = JSON.stringify(jsonData2, null, 2);
+            </script>
+            <p> 
+              すべてのデータ収集が行われた後、各辞書のキー値をすべて統合してチャンクデータを構築しましたが、
+              上記の例で日付や事件番号のように重要性が低いキー値は除外してドキュメントを構成しました。
+            </p>
+            <br>
+
+            <p>前処理過程</p>
+            <figure class="image is-4by2">
+              <img src="img/HelloWorld-llamadata.png">
+            </figure>
+            <p> 
+              
+              検索を活用するためには、収集した文書の細心のチャンキング作業が必要です。
+              私たちのモデル（llama3）の入力を推定するために、収集した文書をllama3 tokenizerに基づいてトークンを計算し、視覚化しました。
+
+              モデリングを担当する同僚が、1文書あたり1000トークン前後を要求しました。
+              そのため、収集したデータの文書あたりのトークン数を128、256、512、1024...などの入力長単位で視覚化し、
+              1024トークンを大幅に超えるものに限って分割作業を行いました。
+            </p>
+
+
+
+            <figure class="image is-4by2">
+              <img src="img/foreignAICC-1.png">
+            </figure>
+            <p>課題2. 多言語処理方法</p>
+              <p> 
+                開発初期にユーザーの多様な外国語入力をどのように処理すべきか悩みました。
+                多言語モデルの使用を検討しましたが、最終的にパフォーマンスのために英語モデルを中心に入出力をGPT apiを通じて
+                翻訳する方式で実装することになりました。私たちはパフォーマンスが実証されたmistral-7b/llama3モデルを最終選定しました。
+              </p>
+
+
+            <figure class="image is-4by2">
+              <img src="img/foreignAICC-3.png">
+            </figure>
+            <p>課題3. RAG（Retrieval-Augmented Generation）の活用</p>
+            <p> 
+              開発初期には、ユーザーの多様な外国語入力をどのように処理すべきか悩みました。多言語モデルの使用を検討しましたが、各言語の入力ごとに異なるモデルを使用するのは非効率的だと考えました。
+              最終的に、性能を重視して英語モデルを中心に据え、入出力をGPT APIを通じて翻訳する方式で実装することにしました。私たちは性能が検証されたmistral-7b/llama3モデルを最終選定しました。
+            </p>
+            <br>
+            <p>課題4. STT/TTS有線電話接続(進行中)</p>
+              <p>
+                現在、Twillioを活用して実装予定です。
+              </p>
+          </div>
+
+          <p class="title">Demo</p>
+          <div class="content">
+            <iframe src="https://drive.google.com/file/d/1sWG3F10aGnIIE0b3bzWlcsfweU3RIQL-/preview" width="640" height="480" allow="autoplay"></iframe>
+          </div>
+        </div>
+
+        <div class="tags">
+          <span class="tag">python</span>
+          <span class="tag">mysql</span>
+          <span class="tag">langchain</span>
+          <span class="tag">RAG</span>
+        </div>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success">Close</button>
+      </footer>
+    </div>
+  </div>
+
+  <div id="project-4-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Project title</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <div id="project-4-modal-carousel" class="carousel">
+          <figure class="image is-4by3 carousel-cell">
+            <img src="img/carousel/1.png">
+          </figure>
+          <figure class="image is-4by3 carousel-cell">
+            <img src="img/carousel/2.png">
+          </figure>
+          <figure class="image is-4by3 carousel-cell">
+            <img src="img/carousel/3.png">
+          </figure>
+        </div>
+
+        <div class="content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo
+            consequat.</p>
+          <div class="tags">
+            <span class="tag">angular</span>
+            <span class="tag">mongo</span>
+            <span class="tag">typscript</span>
+            <span class="tag">node</span>
+          </div>
+        </div>
+
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success">Close</button>
+      </footer>
+    </div>
+  </div>
+
+  <div id="TBL-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">터벌림</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <div class="project-content">
+          <div class="content">
+            <p>トゥボルリムは、世宗大学校の40周年を迎えた歴史ある韓国伝統音楽サークルです。
+              私は2年生の時から幹部を務め、直接後輩たちを教育し、リードしてきました。
+              毎回の公演で率先垂範し、雰囲気を盛り上げました。
+              私の学生生活の大切な思い出です。
+              
+            </p>
+          <figure class="image is-4by3">
+            <img src="img/TBL/TBL-2.jpg">
+          </figure>
+          <div class="content">
+            <p>世宗大学校大同祭公演（2019年）</p>
+          </div>
+          
+          <figure class="image is-4by3">
+            <img src="img/TBL/TBL-1.jpg">
+          </figure>
+          <div class="content">
+            <p>地域祭り公演（2023年）</p>
+          </div>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success">Close</button>
+      </footer>
+    </div>
+  </div>
+
+  <div id="Military-Service-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">兵役</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <div class="project-content">
+          <div class="content">
+            <p>他の人とは異なる軍生活をしたいと思い、最前線のGPOに志願しました。
+              1年半の間、誠実に任務に臨み、上官や同僚との関係を深めました。</p>
+          <figure class="image is-4by3">
+            <img src="img/military/1.jpg">
+          </figure>
+          <div class="content">
+            <p>GOPサービスに志願し、軍生活を始めました。非武装地帯（DMZ）で1年半を過ごし、澄んだ空気を吸いながら心身を鍛えました。.</p>
+          </div>
+          
+          <figure class="image is-4by3">
+            <img src="img/military/4.jpg">
+          </figure>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success">Close</button>
+      </footer>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <a href="https://github.com/mmacneil/devfolio" target="_blank" class="icon has-text-primary">
+          <i class="fab fa-github"></i> <strong>devfolio</strong></a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/bundle.js"></script>
+</body>
+
+</html>
