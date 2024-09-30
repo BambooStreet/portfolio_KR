@@ -2,156 +2,22 @@
 <html lang="kr">
 
 <head>
-  <title>devfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="css/main.bundle.css">
-  <script src="https://kit.fontawesome.com/4e5a72c756.js"></script>
-  <style>
-    .en { display: block; }
-    .jp { display: none; }
-    .language-selector {
-        display: flex;
-        align-items: center;
-        margin-bottom: 20px;
-    }
-    #languageSelect {
-        padding: 5px;
-        font-size: 14px;
-        margin-right: 10px;
-    }
-    .language-description {
-        font-size: 18px;  /* 이 부분만 크기를 키웠습니다 */
-        color: #f0f0f0;
-    }
-    .education-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    }
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>devfolio</title>
+    <meta name="description" content="개발자 포트폴리오">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+
+    <!-- 새로운 사용자 정의 CSS -->
+    <link rel="stylesheet" href="css/custom.css">
     
-    .date {
-      margin-left: auto;
-      white-space: nowrap;
-    }
-
-    /* 프로젝트 카드 부분 */
-    .card {
-    position: relative;
-    z-index: 1;
-    transition: z-index 0s 0.1s; /* z-index 변경을 지연시켜 애니메이션이 끝난 후 적용 */
-    }
-
-    .card:hover {
-    z-index: 10;
-    transition: z-index 0.1s; /* hover 시 즉시 z-index 변경 */
-    }
-    .card-reveal {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background-color: white;
-      padding: 1rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-      z-index: 5;
-    }
-
-    .card.active .card-reveal {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .card-gap {
-      margin-bottom: 1rem;
-    }
-
-
-    .project-content {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-      gap: 20px;
-    }
-
-    .project-content .image {
-      max-width: 100%;
-      height: auto;
-      object-fit: contain; /* 이미지 비율 유지 */
-    }
-
-    .project-content .content {
-      padding: 0 20px;
-    }
-
-    .modal-card {
-      width: 80vw; /* 뷰포트 너비의 80% */
-      max-width: 960px; /* 최대 너비 설정 */
-      height: 90vh; /* 뷰포트 높이의 90% */
-      max-height: 90vh; /* 최대 높이 설정 */
-    }
-
-    .modal-card-body {
-      max-height: calc(90vh - 120px); /* 헤더와 푸터 높이를 고려하여 조정 */
-      overflow-y: auto; /* 내용이 넘칠 경우 스크롤 표시 */
-    }
-
-    /* 반응형 스타일 */
-    @media screen and (max-width: 768px) {
-      .modal-card {
-        width: 95vw;
-        height: 95vh;
-      }
-    }
-
-    .poster-container {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 20px;
-      height: 50vh;  /* 뷰포트 높이의 50%를 차지하도록 설정 */
-    }
-    .poster-pdf {
-      flex: 1;
-      margin-right: 20px;
-      height: 100%;  /* 컨테이너의 전체 높이를 사용 */
-    }
-    .poster-description {
-      flex: 1;
-      overflow-y: auto;  /* 내용이 넘치면 스크롤 가능하도록 */
-      height: 100%;  /* 컨테이너의 전체 높이를 사용 */
-    }
-    .poster-pdf iframe {
-      width: 100%;
-      height: 500px;  /* PDF가 컨테이너를 꽉 채우도록 */
-      border: none;
-    }
-  
-    @media (max-width: 768px) {
-      .poster-container {
-        flex-direction: column;
-        height: auto;  /* 모바일에서는 자동 높이 */
-      }
-      .poster-pdf {
-        margin-right: 0;
-        margin-bottom: 20px;
-        height: 50vh;  /* 모바일에서 포스터 높이를 뷰포트의 50%로 */
-      }
-      .poster-description {
-        height: auto;  /* 설명 부분은 내용에 맞게 자동 조절 */
-      }
-    }
-
-    pre {
-            background-color: #f4f4f4;
-            padding: 10px;
-            border-radius: 5px;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-        }
-
+    <!-- 기존 CSS -->
+    <link rel="stylesheet" href="css/main.bundle.css">
+    
+    
+    
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/4e5a72c756.js"></script>
   </style>
 </head>
 
@@ -205,7 +71,7 @@
         <div class="level">
           <div class="level-item has-text-centered">
             <figure class="image is-128x128">
-              <img class="is-rounded" src="img/me.jpg">
+              <img class="is-rounded" src="img/me-cut.jpg">
             </figure>
           </div>
         </div>
@@ -264,18 +130,9 @@
               <span class="date">2019.03 - 2022.03</span> 
             </p>
             <p class="subtitle is-6 education-item">
-              <span>군휴학</span>
-              <span class="date">2020.03 - 2021.09</span>
-            </p>
-              <p class="subtitle is-6 education-item">
               <span>데이터사이언스학과</span>
               <span class="date">2022.03 - 2025.02</span>
             </p>
-          </p>
-          <p class="subtitle is-6 education-item">
-          <span>GPA</span>
-          <span class="date">3.51/4.5</span>
-        </p>
           </div>
         </div>
       </div>
@@ -384,23 +241,31 @@
       <div class="tile is-ancestor">
         <div class="tile is-vertical is-12">
           <div class="tile">
+
             <div class="tile is-parent">
               <article class="tile is-child notification">
-                <p class="title">SejongMate</p>
-                <p class="subtitle is-6">2023.03~2023.06</p>
-                <p class="subtitle is-6">LLM을 활용한 대학 챗봇 개발</p>
-                <figure class="image is-3by2">
-                  <img class="modal-trigger" data-target="project-1-modal" src="img/sejongmate-logo.png">
-                </figure>
+                <div class="project-content">
+                  <div class="project-image">
+                    <figure class="image">
+                      <img class="modal-trigger" data-target="project-1-modal" data-project="sejongmate" src="img/sejongmate-logo.png">
+                    </figure>
+                  </div>
+                  <div class="project-details">
+                    <p class="title">SejongMate</p>
+                    <p class="subtitle is-6">2023.03~2023.06</p>
+                    <p class="subtitle is-6">LLM을 활용한 대학 챗봇 개발</p>
+                  </div>
+                </div>
               </article>
             </div>
+            
             <div class="tile is-parent">
               <article class="tile is-child notification">
                 <p class="title">HelloWorld</p>
                 <p class="subtitle is-6">2024.06~2024.08</p>
                 <p class="subtitle is-6">국내 외국인 근로자를 위한 AICC(AI Contact Center)</p>
                 <figure class="image is-4by3">
-                  <img class="modal-trigger" data-target="project-3-modal" src="img/HelloWorld-logo2.png">
+                  <img class="modal-trigger" data-target="project-2-modal" data-project="helloworld" src="img/HelloWorld-logo2.png">
                 </figure>
               </article>
             </div>
@@ -410,6 +275,7 @@
       <p class="subtitle">자세한 설명을 보려면 이미지를 클릭하세요.</p>
     </div>
   </section>
+  
 <!-- 
   <section class="section">
     <div class="container">
@@ -478,6 +344,7 @@
   </section>
 
   <!-- Modals -->
+  <!-- Modals -->
   <div id="project-1-modal" class="modal">
     <div class="modal-background"></div>
     <div class="modal-card">
@@ -486,226 +353,24 @@
         <button class="delete" aria-label="close"></button>
       </header>
       <section class="modal-card-body">
-        <div class="project-content">메인 포스터
-
-          <p class="title"></p>
-          <div class="poster-container">
-            <div class="poster-pdf">
-              <iframe src="img/sejongmate-poster.pdf#toolbar=0&navpanes=0&scrollbar=0" width="300" height="200"></iframe>
-            </div>
-          </div>
-          <p>제목: SejongMate</p>
-          <p>내용: 대규모 언어 모델을 활용한 세종대학교의 챗봇</p>
-          <p>팀원: 5명</p>
-          <p>수상: 2023년 교내 소프트웨어 창의설계 경진대회 우수상(2위)</p>
-
-          <hr/>
-          <div class="content">
-            <p class="title">수행 역할</p>
-              <li>다양한 출처(대학 커뮤니티, 학칙, 위키피디아)에서 데이터를 수집하고 전처리했습니다.</li>
-              <li>GPT-api를 활용해 Question-Answer 쌍 데이터를 생성하고 검증했습니다.</li>
-              <li>데이터 증강, 무작위 문장 순서 변환, 무작위 문장 삭제 등의 기법을 적용하여 데이터의 다양성과 품질을 개선했습니다.</li>
-          
-            <figure class="image is-4by2">
-              <img src="img/sejongmate-data-1.png">
-            </figure>
-            <p class="subtitle">과제 1. 데이터 수집, 전처리</p>
-              <p>초기 데이터 수집 과정에서 사용자의 요구를 파악하고, 
-                그에 맞는 키워드를 기반으로 데이터를 수집할 필요성을 느꼈습니다. 
-                에브리타임의 최근 게시물에서 질문을 추출하고, 추가로 설문 조사를 통해 키워드를 도출했습니다.
-                <br>
-                수집한 키워드를 바탕으로 내부 회의를 통해 필수적으로 포함되어야 할 키워드를 최종 결정하고, 
-                이를 통해 대학 커뮤니티, 학사 규정에서 정보를 추출하여 데이터를 구축하고 확장했습니다.
-              </p>
-
-            <p class="subtitle">과제 2. Question-Answer 쌍 데이터 생성</p>
-              <p>챗봇의 주요 로직을 사용자 쿼리와 DB의 가장 유사한 질문 간의 유사도를 계산하고, 그에 적합한 답변을 출력하는 것으로 결정했습니다.
-                이에 따라 Question-Answer 데이터를 생성해야 했고, 프로세스는 다음과 같았습니다.
-                <ol>
-                <li>앞서 수집한 문서를 GPT input에 적합한 청크 단위로 분할</li>
-                <li>GPT-turbo-3.5 api를 활용하여 앞서 수집된 문서에 대한 Question 생성</li>
-                <li>생성된 Question + 문서를 입력으로 하여 신뢰성 있는 Answer 생성</li>
-                <li>인간에 의한 최종 검증</li>
-                </ol>
-                각 프로세스에는 적절한 GPT 프롬프트를 직접 작성하여 효율을 높였습니다.
-                <br>
-              </p>
-
-            <p class="subtitle">과제 3. 데이터 증강, 다양성 및 품질을 개선</p>
-            <p>실제 사용자는 예상했던 문장과는 다른 방식으로 질문하는 경우가 많았습니다. 
-              예를 들어, 대학명을 줄이거나 과목명을 약어로 쓰는 방식이 있습니다. 
-              우리는 이를 고려하여 임의로 유의어/약어에 관한 질문 데이터를 확장했습니다.
-              <br>
-              또한, 한국어는 어순이 바뀌어도 의미가 유지되는 경우가 많습니다. 
-              우리는 이를 고려하여 문장 내의 단어를 무작위로 바꾸어 데이터를 확장했습니다.
-              <br>
-              최종적으로 확장된 데이터는 수집한 QA에 대해 약 4만 건입니다.
-            
-              <ol>
-                <li>GPT 프롬프트를 통해 질문 형식을 지정하고, 다양한 질문 유형을 생성</li>
-                <li>유의어/약어 어휘에 관한 확장</li>
-                <li>무작위 문장 순서 변환 및 삭제를 통한 추가 데이터 다양화</li>
-              </ol>
-            </p>
-          </div>
-        </div>
-        
-        <div class="tags">
-          <span class="tag">python</span>
-          <span class="tag">aws</span>
-          <span class="tag">gradio</span>
-        </div>
+        <!-- 프로젝트 내용이 여기에 로드됩니다 -->
       </section>
       <footer class="modal-card-foot">
         <button class="button is-success">Close</button>
       </footer>
     </div>
   </div>
+  
 
-  <div id="project-3-modal" class="modal">
+  <div id="project-2-modal" class="modal">
     <div class="modal-background"></div>
     <div class="modal-card">
       <header class="modal-card-head">
         <p class="modal-card-title">외국인AICC</p>
         <button class="delete" aria-label="close"></button>
       </header>
-      <section class="modal-card-body">
-        
-        <div class="project-content">
-          <p class="title">메인 포스터</p>
-          <div class="poster-container">
-            <div class="poster-pdf">
-              <iframe src="img/foreignAICC-poster.pdf#toolbar=0&navpanes=0&scrollbar=0" width="300" height="200"></iframe>
-            </div>
-          </div>
-          <div class="content">
-            <p>제목: HelloWorld</p>
-            <p>내용: 감소하는 외국인 노동자 지원센터에 대응해 외국인 근로자를 위한 법률, 비자, 취업 AI 상담 서비스(채팅, 음성)</p>
-            <p>팀원: 5명</p>
-            <p>수상: 서울시 새싹 해커톤 장려상(7위)</p>
-            <ol>
-              <li>외국인 노동자가 알고 싶은 것(법률, 비자 질문 등)에 대해 챗봇에 상담합니다.</li>
-              <li>챗봇은 데이터를 기반으로 법적 정보, 예시, 구체적인 해결책을 제공합니다.</li>
-              <li>추가 상담이 필요한 경우, 앱 내에서 직접 상담 일정을 잡을 수 있습니다.</li>
-              <li>오프라인 상담의 노력을 줄이기 위해, 상담사에게 채팅 요약을 제공하여 프로세스를 더 원활하게 하는 데 도움을 줍니다.</li>
-            </ol>  
-          </div>
-        </div>
-        <hr/>
-        
-        <p class="title">수행 역할</p>
-        <div class="content">
-            <li>홈페이지에서 텍스트를 크롤링/전처리 후, 검색(Retrieval)을 위한 문서 청킹/임베딩을 수행하여 저장</li>
-            <li>ElasticSearch를 활용한 DB 구축</li>
-            <li>AWS EC2 인스턴스, Flask를 활용해 모델 배포</li>
-            <li>Twilio를 활용해 다국어 음성 서비스 구현 및 배포</li>
-        
-            <br>
-
-            <p class = "subtitle">주요 과제</p>
-        
-            <figure class="image is-4by2">
-              <img src="img/foreignAICC-1.png">
-            </figure>
-            <p class = "subtitle">과제 1. 데이터 수집과 전처리</p>
-              <p> 
-                우리는 사용자의 질문을 크게 4가지 카테고리로 분류했습니다(법률, 비자, 상담사례, 채용).
-                저는 각 카테고리별로 정부 웹사이트나 오픈 데이터 포털에서 텍스트를 수집하고, 구조화된 형식으로 변환했습니다.
-              </p>
-            <br>
-            <p>데이터 예시</p>
-            
-            <pre id="json-display-1"></pre>
-            <pre id="json-display-2"></pre>
-        
-            <script>
-                const jsonData1 = {
-                    "카테고리": "개인회생, 파산 및 면책 - 파산 및 면책",
-                    "제목": "파산재단",
-                    "질문": "파산재단이란 무엇인가요?",
-                    "답변": "파산재단이란 파산선고 시 채무자가 보유한 모든 재산을 지칭합니다(채무자 회생 및 파산에 관한 법률 제382조 제1항)."
-                };
-        
-                const jsonData2 = {
-                    "사건명": "손해배상(기)",
-                    "판결제목": "대법원 2021. 6. 10. 선고 2021다205490 판결",
-                    "법원": "대법원",
-                    "판결일": "2021-06-10",
-                    "사건번호": "2021다205490",
-                    "판결요지": {
-                        "질문": "낙찰금액이 가상경쟁가격으로 하락한 경우, 그에 따라 관급자재 등의 분리발주 대상금액도 감소합니까?",
-                        "답변": "부정",
-                        "요약": "그 판시와 같은 이유를 들어, 낙찰금액이 가상경쟁가격으로 하락한 경우 그에 따라 관급자재 등의 분리발주 대상금액도 감소한다는 피고의 주장을 배척하였다.",
-                        "핵심문장": "낙찰금액이 가상경쟁가격으로 하락한 경우, 관급자재 등의 분리발주 대상금액도 감소한다는 피고의 주장을 배척하였다."
-                    },
-                    "키워드": ["피고", "주장"],
-                    "참조법령": "손해배상",
-                    "참조판례": "",
-                    "분류": "근로자 - 손해배상"
-                };
-        
-                document.getElementById('json-display-1').textContent = JSON.stringify(jsonData1, null, 2);
-                document.getElementById('json-display-2').textContent = JSON.stringify(jsonData2, null, 2);
-            </script>
-            <p> 
-              모든 데이터 수집이 이루어진 후, 각 사전의 키 값을 모두 통합하여 청크 데이터를 구축했지만,
-              위의 예시에서 날짜나 사건번호와 같이 중요도가 낮은 키 값은 제외하고 문서를 재구성했습니다.
-            </p>
-            <br>
-        
-            <p>전처리 과정</p>
-            <figure class="image is-4by2">
-              <img src="img/HelloWorld-llamadata.png">
-            </figure>
-            <p> 
-              검색을 활용하기 위해서는 수집한 문서의 세심한 청킹 작업이 필요합니다.
-              우리 모델(llama3)의 입력을 추정하기 위해, 수집한 문서를 llama3 tokenizer를 기반으로 토큰을 계산하고 시각화했습니다.
-        
-              모델링을 담당하는 동료가 1문서당 1000토큰 전후를 요구했습니다.
-              따라서 수집한 데이터의 문서당 토큰 수를 128, 256, 512, 1024... 등의 입력 길이 단위로 시각화하고,
-              1024토큰을 크게 초과하는 것에 한해 분할 작업을 수행했습니다.
-              상담 사례와 같이 청킹시 의미가 퇴색될 우려가 있는 데이터에 대해서는, GPT api를 활용해 512 토큰 이하로 요약했습니다.
-            </p>
-        
-            <!-- <figure class="image is-4by2">
-              <img src="img/foreignAICC-1.png">
-            </figure> -->
-            <p class = "subtitle">과제 2. ElasticSearch를 활용한 DB 구축</p>
-              <p> 
-                Langchain과의 연동을 위해 ElasticSearch DB를 활용했습니다.
-                앞서 512토큰 기준으로 분할된 chunk 데이터를 OpenAI embedding 모델을 활용해 임베딩하고, 저장했습니다.
-              </p>
-        
-            <figure class="image is-4by2">
-              <img src="img/foreignAICC-3.png">
-            </figure>
-            <p class = "subtitle">과제 3. AWS EC2 인스턴스, Flask를 활용해 모델 배포</p>
-            <p> 
-              Flask를 활용해 LLM 애플리케이션을 구축하고, 8B의 모델을 안정적으로 배포하기 위해 고용량의 인스턴스를 활용했습니다.
-              주된 어려움은 Amazon 인스턴스에서 제공하는 다양한 ami들에서 파이썬 버전 및 모델 에플리케이션을 구성하는 라이브러리를 설치하는 것이었습니다.
-              향후 Linux 시스템관리, 도커, 쉘 스크립팅 공부를 통해 부족함을 매꿔야 겠다고 생각했습니다.
-
-            </p>
-            <br>
-            <p class = "subtitle">과제 4. Twilio를 활용한 음성 서비스 구현 및 배포</p>
-              <p>
-                Twilio는 클라우드 커뮤니케이션 플랫폼으로, 개발자들이 음성, 비디오, 메시징 등의 통신 기능을 애플리케이션에 쉽게 통합할 수 있게 해주는 서비스입니다.
-                OpenAI API, Elasticsearch DB를 통해 RAG 기반 대화 시스템을 구축하고, 프롬프팅을 통해 다국어 기능을 추가했습니다.
-                또한 맥락을 이해하고, 멀티턴을 수행하는 로직을 구성해 거부감을 줄이고, 자연스러운 대화를 지향했습니다.
-                자세한 사항은 하래 깃허브를 참고해주세요!
-              </p>
-          </div>
-          <p class="title">GitHub</p>
-          <a href = "https://github.com/BambooStreet/HelloWorld_data">https://github.com/BambooStreet/HelloWorld_data</a>
-        </div>
-
-        
-        <div class="tags">
-          <span class="tag">python</span>
-          <span class="tag">mysql</span>
-          <span class="tag">langchain</span>
-          <span class="tag">RAG</span>
-        </div>
+      <section class="modal-card-body"></section>
+        <!-- 프로젝트 내용이 여기에 로드됩니다 -->
       </section>
       <footer class="modal-card-foot">
         <button class="button is-success">Close</button>
@@ -828,56 +493,101 @@
     </div>
   </footer>
 
-<script src="js/bundle.js"></script>
-<script>
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="js/bundle.js"></script>
+  <script>
   document.addEventListener('DOMContentLoaded', function() {
-    initializeLanguageSelector();
-    initializeCardFunctions();
-});
-
-function initializeLanguageSelector() {
-    const languageSelect = document.getElementById('languageSelect');
-    if (languageSelect) {
-        languageSelect.addEventListener('change', function() {
-            const language = this.value;
-            const urls = {
-                'en': 'https://bamboostreet.github.io/portfolio/',
-                'kr': 'https://bamboostreet.github.io/portfolio_KR/',
-                'jp': 'https://bamboostreet.github.io/portfolio_JPN/'
-            };
-            window.location.href = urls[language] || urls['en'];
+      initializeLanguageSelector();
+      initializeCardFunctions();
+      initializeModalTriggers();
+  });
+  
+  function initializeLanguageSelector() {
+      const languageSelect = document.getElementById('languageSelect');
+      if (languageSelect) {
+          languageSelect.addEventListener('change', function() {
+              const language = this.value;
+              const urls = {
+                  'en': 'https://bamboostreet.github.io/portfolio/',
+                  'kr': 'https://bamboostreet.github.io/portfolio_KR/',
+                  'jp': 'https://bamboostreet.github.io/portfolio_JPN/'
+              };
+              window.location.href = urls[language] || urls['en'];
+          });
+      }
+  }
+  
+  function initializeCardFunctions() {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+          card.addEventListener('mouseenter', handleCardMouseEnter);
+          card.addEventListener('mouseleave', handleCardMouseLeave);
+      });
+  }
+  
+  function handleCardMouseEnter() {
+      const reveal = this.querySelector('.card-reveal');
+      if (reveal) {
+          this.classList.add('active');
+      }
+  }
+  
+  function handleCardMouseLeave() {
+      const reveal = this.querySelector('.card-reveal');
+      if (reveal) {
+          this.classList.remove('active');
+      }
+  }
+  
+  function moveSubsequentElements(element, distance) {
+      let nextElement = element.nextElementSibling;
+      while (nextElement) {
+          nextElement.style.transform = distance ? `translateY(${distance}px)` : '';
+          nextElement = nextElement.nextElementSibling;
+      }
+  }
+  
+  function initializeModalTriggers() {
+    console.log("Initializing modal triggers");
+    document.querySelectorAll('.modal-trigger').forEach(img => {
+        img.addEventListener('click', function() {
+            console.log("Modal trigger clicked");
+            const modalId = this.dataset.target;
+            const modal = document.getElementById(modalId);
+            const modalBody = modal.querySelector('.modal-card-body');
+            const projectFile = this.dataset.project;
+            
+            console.log("Loading project file:", projectFile);
+            
+            // HTML 파일 로드
+            fetch(`project-details/${projectFile}.html`)
+                .then(response => {
+                    console.log("Fetch response:", response);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    console.log("Loaded HTML:", html.substring(0, 100) + "..."); // 처음 100자만 로그
+                    modalBody.innerHTML = html;
+                    modal.classList.add('is-active');
+                })
+                .catch(error => console.error("Error loading project details:", error));
         });
-    }
-}
-
-function initializeCardFunctions() {
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', handleCardMouseEnter);
-        card.addEventListener('mouseleave', handleCardMouseLeave);
     });
-}
 
-function handleCardMouseEnter() {
-    const reveal = this.querySelector('.card-reveal');
-    if (reveal) {
-        this.classList.add('active');
-    }
-}
-
-function handleCardMouseLeave() {
-    const reveal = this.querySelector('.card-reveal');
-    if (reveal) {
-        this.classList.remove('active');
-    }
-}
-
-function moveSubsequentElements(element, distance) {
-    let nextElement = element.nextElementSibling;
-    while (nextElement) {
-        nextElement.style.transform = distance ? `translateY(${distance}px)` : '';
-        nextElement = nextElement.nextElementSibling;
-    }
+    // 모달 닫기 기능
+    document.querySelectorAll('.modal .delete, .modal .button').forEach(closeButton => {
+        closeButton.addEventListener('click', function() {
+            this.closest('.modal').classList.remove('is-active');
+        });
+    });
 }
   </script>
 </body>

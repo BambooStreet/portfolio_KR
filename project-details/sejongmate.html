@@ -1,0 +1,78 @@
+<div class="content">
+    <h1 class="title is-4">SejongMate</h1>
+    <p class="subtitle is-6">2023.03 ~ 2023.06</p>
+    
+    <div class="project-overview">
+      <h2 class="title is-5">프로젝트 개요</h2>
+      <p>SejongMate는 대규모 언어 모델을 활용한 세종대학교의 챗봇으로, 학생들의 다양한 질문에 신속하고 정확한 답변을 제공합니다.</p>
+    </div>
+
+          <p class="title"></p>
+          <div class="poster-container">
+            <div class="poster-pdf">
+              <iframe src="img/sejongmate-poster.pdf#toolbar=0&navpanes=0&scrollbar=0" width="300" height="200"></iframe>
+            </div>
+          </div>
+          <p>제목: SejongMate</p>
+          <p>내용: 대규모 언어 모델을 활용한 세종대학교의 챗봇</p>
+          <p>팀원: 5명</p>
+          <p>수상: 2023년 교내 소프트웨어 창의설계 경진대회 우수상(2위)</p>
+
+          <hr/>
+          <div class="content">
+            <p class="title">수행 역할</p>
+              <li>다양한 출처(대학 커뮤니티, 학칙, 위키피디아)에서 데이터를 수집하고 전처리했습니다.</li>
+              <li>GPT-api를 활용해 Question-Answer 쌍 데이터를 생성하고 검증했습니다.</li>
+              <li>데이터 증강, 무작위 문장 순서 변환, 무작위 문장 삭제 등의 기법을 적용하여 데이터의 다양성과 품질을 개선했습니다.</li>
+          
+            <figure class="image is-4by2">
+              <img src="img/sejongmate-data-1.png">
+            </figure>
+            <p class="subtitle">과제 1. 데이터 수집, 전처리</p>
+              <p>초기 데이터 수집 과정에서 사용자의 요구를 파악하고, 
+                그에 맞는 키워드를 기반으로 데이터를 수집할 필요성을 느꼈습니다. 
+                에브리타임의 최근 게시물에서 질문을 추출하고, 추가로 설문 조사를 통해 키워드를 도출했습니다.
+                <br>
+                수집한 키워드를 바탕으로 내부 회의를 통해 필수적으로 포함되어야 할 키워드를 최종 결정하고, 
+                이를 통해 대학 커뮤니티, 학사 규정에서 정보를 추출하여 데이터를 구축하고 확장했습니다.
+              </p>
+
+            <p class="subtitle">과제 2. Question-Answer 쌍 데이터 생성</p>
+              <p>챗봇의 주요 로직을 사용자 쿼리와 DB의 가장 유사한 질문 간의 유사도를 계산하고, 그에 적합한 답변을 출력하는 것으로 결정했습니다.
+                이에 따라 Question-Answer 데이터를 생성해야 했고, 프로세스는 다음과 같았습니다.
+                <ol>
+                <li>앞서 수집한 문서를 GPT input에 적합한 청크 단위로 분할</li>
+                <li>GPT-turbo-3.5 api를 활용하여 앞서 수집된 문서에 대한 Question 생성</li>
+                <li>생성된 Question + 문서를 입력으로 하여 신뢰성 있는 Answer 생성</li>
+                <li>인간에 의한 최종 검증</li>
+                </ol>
+                각 프로세스에는 적절한 GPT 프롬프트를 직접 작성하여 효율을 높였습니다.
+                <br>
+              </p>
+
+            <p class="subtitle">과제 3. 데이터 증강, 다양성 및 품질을 개선</p>
+            <p>실제 사용자는 예상했던 문장과는 다른 방식으로 질문하는 경우가 많았습니다. 
+              예를 들어, 대학명을 줄이거나 과목명을 약어로 쓰는 방식이 있습니다. 
+              우리는 이를 고려하여 임의로 유의어/약어에 관한 질문 데이터를 확장했습니다.
+              <br>
+              또한, 한국어는 어순이 바뀌어도 의미가 유지되는 경우가 많습니다. 
+              우리는 이를 고려하여 문장 내의 단어를 무작위로 바꾸어 데이터를 확장했습니다.
+              <br>
+              최종적으로 확장된 데이터는 수집한 QA에 대해 약 4만 건입니다.
+            
+              <ol>
+                <li>GPT 프롬프트를 통해 질문 형식을 지정하고, 다양한 질문 유형을 생성</li>
+                <li>유의어/약어 어휘에 관한 확장</li>
+                <li>무작위 문장 순서 변환 및 삭제를 통한 추가 데이터 다양화</li>
+              </ol>
+            </p>
+          </div>
+        </div>
+        
+        <div class="tags">
+          <span class="tag">python</span>
+          <span class="tag">aws</span>
+          <span class="tag">gradio</span>
+        </div>
+    </div>
+</div>
