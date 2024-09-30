@@ -8,6 +8,7 @@ const SejongmateDescription = () => {
       <div className="mb-6">
         <h2 className="text-xl font-semibold mb-2">개요</h2>
         <p>팀원: 5명</p>
+        <p>역할: AI개발</p>
         <p>수상: 2023년 교내 소프트웨어 창의설계 경진대회 우수상(2위)</p>
         <p>내용: SejongMate는 LLM, Rule-based 기법을 활용한 세종대학교의 챗봇으로, 학생들의 다양한 질문에 정확한 답변을 제공합니다.</p>
       </div>

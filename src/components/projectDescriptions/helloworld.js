@@ -6,13 +6,13 @@ const HelloWorldDescription = () => {
     <div className="text-white">
       <div className="mb-6">
         <h2 className="text-xl font-semibold mb-2">개요</h2>
-        <p>팀원: 대학생 팀</p>
-        <p>내용: 외국인 근로자를 위한 통합 어플리케이션 개발</p>
+        <p>팀원: 7명</p>
         <p>역할: AI 개발</p>
+        <p>내용: 외국인 근로자를 위한 통합 어플리케이션 개발</p>
       </div>
 
-      <div className="mb-6">
-        <div className="bg-gray-700 p-2 rounded-lg mb-4">
+      <div className="mb-7">
+        <div className="bg-gray-700 p-1 rounded-lg mb-1">
           {/* 프로젝트 관련 이미지나 로고를 넣을 수 있습니다 */}
           <img 
             src={foreignAICC_poster}
