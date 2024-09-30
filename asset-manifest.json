@@ -1,30 +1,38 @@
 {
   "files": {
-    "main.css": "/portfolio_KR/static/css/main.efb309b2.css",
-    "main.js": "/portfolio_KR/static/js/main.82cc3046.js",
-    "static/js/784.5c1d8c63.chunk.js": "/portfolio_KR/static/js/784.5c1d8c63.chunk.js",
+    "main.css": "/portfolio_KR/static/css/main.ce7c4476.css",
+    "main.js": "/portfolio_KR/static/js/main.db31af60.js",
+    "static/js/784.4c67091e.chunk.js": "/portfolio_KR/static/js/784.4c67091e.chunk.js",
     "static/js/453.78a80aa8.chunk.js": "/portfolio_KR/static/js/453.78a80aa8.chunk.js",
     "static/js/383.7b212c47.chunk.js": "/portfolio_KR/static/js/383.7b212c47.chunk.js",
-    "static/js/253.a8666422.chunk.js": "/portfolio_KR/static/js/253.a8666422.chunk.js",
-    "static/js/624.c0e3f8ea.chunk.js": "/portfolio_KR/static/js/624.c0e3f8ea.chunk.js",
+    "static/js/253.9eaff257.chunk.js": "/portfolio_KR/static/js/253.9eaff257.chunk.js",
+    "static/js/33.53b63f88.chunk.js": "/portfolio_KR/static/js/33.53b63f88.chunk.js",
     "static/media/sejongmate-poster.png": "/portfolio_KR/static/media/sejongmate-poster.176c1ac052d530c726a6.png",
     "static/media/foreignAICC-poster-1.png": "/portfolio_KR/static/media/foreignAICC-poster-1.9b59dabfdd155604f7ef.png",
-    "static/media/sejongmate-data-1.png": "/portfolio_KR/static/media/sejongmate-data-1.ac3a3efbb4b1b987eedb.png",
+    "static/media/sejongmate-model1.png": "/portfolio_KR/static/media/sejongmate-model1.57e96a0bf7085a050740.png",
+    "static/media/sejongmate-data2.png": "/portfolio_KR/static/media/sejongmate-data2.f4fa10ca302636b897d5.png",
+    "static/media/sejongmate-model3.png": "/portfolio_KR/static/media/sejongmate-model3.c688f2da4985e63358ac.png",
+    "static/media/sejongmate-data3.png": "/portfolio_KR/static/media/sejongmate-data3.b7af37f83e1b514b6a9f.png",
     "static/media/sejongmate-logo.png": "/portfolio_KR/static/media/sejongmate-logo.c0d4c81b5aa5e1041eff.png",
+    "static/media/sejongmate-deploy1.png": "/portfolio_KR/static/media/sejongmate-deploy1.0c88a4ccf338b2e22c80.png",
+    "static/media/sejongmate-deploy2.png": "/portfolio_KR/static/media/sejongmate-deploy2.2ae0af7b4ea5a834b147.png",
+    "static/media/sejongmate-data4.png": "/portfolio_KR/static/media/sejongmate-data4.e0d194550a3acebe2db6.png",
     "static/media/sejong-logo.svg": "/portfolio_KR/static/media/sejong-logo.dad161bd8d491daa654e6aabe9bbadb5.svg",
+    "static/media/sejongmate-data1.png": "/portfolio_KR/static/media/sejongmate-data1.5c2afb5ac37494b21441.png",
     "static/media/HelloWorld-logo.png": "/portfolio_KR/static/media/HelloWorld-logo.916282d32befdf41aa74.png",
+    "static/media/sejongmate-model2.png": "/portfolio_KR/static/media/sejongmate-model2.40f81b04ed3aebea93b9.png",
     "static/media/ETRI-logo.png": "/portfolio_KR/static/media/ETRI-logo.e76cac3d23ecd14f6679.png",
     "index.html": "/portfolio_KR/index.html",
-    "main.efb309b2.css.map": "/portfolio_KR/static/css/main.efb309b2.css.map",
-    "main.82cc3046.js.map": "/portfolio_KR/static/js/main.82cc3046.js.map",
-    "784.5c1d8c63.chunk.js.map": "/portfolio_KR/static/js/784.5c1d8c63.chunk.js.map",
+    "main.ce7c4476.css.map": "/portfolio_KR/static/css/main.ce7c4476.css.map",
+    "main.db31af60.js.map": "/portfolio_KR/static/js/main.db31af60.js.map",
+    "784.4c67091e.chunk.js.map": "/portfolio_KR/static/js/784.4c67091e.chunk.js.map",
     "453.78a80aa8.chunk.js.map": "/portfolio_KR/static/js/453.78a80aa8.chunk.js.map",
     "383.7b212c47.chunk.js.map": "/portfolio_KR/static/js/383.7b212c47.chunk.js.map",
-    "253.a8666422.chunk.js.map": "/portfolio_KR/static/js/253.a8666422.chunk.js.map",
-    "624.c0e3f8ea.chunk.js.map": "/portfolio_KR/static/js/624.c0e3f8ea.chunk.js.map"
+    "253.9eaff257.chunk.js.map": "/portfolio_KR/static/js/253.9eaff257.chunk.js.map",
+    "33.53b63f88.chunk.js.map": "/portfolio_KR/static/js/33.53b63f88.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.efb309b2.css",
-    "static/js/main.82cc3046.js"
+    "static/css/main.ce7c4476.css",
+    "static/js/main.db31af60.js"
   ]
 }
