@@ -1,4 +1,6 @@
 import React from 'react';
+import sejongmatePoster from '../../images/sejongmate-poster.png';
+import sejongmateData1 from '../../images/sejongmate-data-1.png';
 
 const SejongmateDescription = () => {
   return (
@@ -14,7 +16,7 @@ const SejongmateDescription = () => {
         <div className="bg-gray-700 p-2 rounded-lg mb-4">
           {/* PDF 대신 이미지를 사용 */}
           <img 
-            src="/images/sejongmate-poster.png" 
+            src={sejongmatePoster}
             alt="SejongMate Poster" 
             className="w-full h-192 object-contain mb-2"
           />
@@ -28,7 +30,7 @@ const SejongmateDescription = () => {
         <h2 className="text-xl font-semibold mb-2">수행 역할</h2>
         
         <h3 className="text-lg font-semibold mb-2">1. 데이터 수집, 전처리</h3>
-        <img src="/images/sejongmate-data-1.png" alt="Data processing" className="w-full mb-4" />
+        <img src={sejongmateData1} alt="Data processing" className="w-full mb-4" />
         <p className="mb-4">
           초기 데이터 수집 과정에서 사용자의 요구를 파악하고, 그에 맞는 키워드를 기반으로 데이터를 수집할 필요성을 느꼈습니다. 
           에브리타임의 최근 게시물에서 질문을 추출하고, 추가로 설문 조사를 통해 키워드를 도출했습니다.
