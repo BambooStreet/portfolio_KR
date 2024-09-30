@@ -7,16 +7,18 @@ import project2Image from './images/HelloWorld-logo.png';
 const ProjectDescription = lazy(() => import('./components/ProjectDescription'));
 
 const ProjectModal = ({ project, onClose }) => (
-  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-    <div className="bg-gray-800 p-8 rounded-lg max-w-2xl w-full max-h-[80vh] overflow-y-auto">
-      <h2 className="text-2xl font-bold mb-4">{project.event}</h2>
-      {project.isDetailedProject ? (
-        <Suspense fallback={<div>로딩 중...</div>}>
-          <ProjectDescription projectId={project.id} />
-        </Suspense>
-      ) : (
-        <p>{project.description}</p>
-      )}
+  <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+    <div className="bg-gray-800 p-8 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+      <div className="p-6 flex-grow overflow-y-auto">
+        <h2 className="text-2xl font-bold mb-4">{project.event}</h2>
+        {project.isDetailedProject ? (
+          <Suspense fallback={<div>로딩 중...</div>}>
+            <ProjectDescription projectId={project.id} />
+          </Suspense>
+        ) : (
+          <p className="text-white text-lg">{project.description}</p>
+        )}
+      </div>
       <button 
         onClick={onClose}
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
@@ -147,7 +149,7 @@ const TimelinePortfolio = () => {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white p-8">
-      <h1 className="text-4xl font-bold mb-16 text-center">Welcome! This is SeokJoo Hong's Portfolio</h1>
+      <h1 className="text-4xl font-bold mb-16 text-center">Welcome! SeokJoo Hong's Portfolio</h1>
       <div className="max-w-6xl mx-auto relative">
         <div className="absolute w-1 bg-gray-400 h-full left-1/2 transform -translate-x-1/2"></div>
         {events.map((item, index) => (

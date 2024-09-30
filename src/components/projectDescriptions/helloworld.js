@@ -8,7 +8,8 @@ const HelloWorldDescription = () => {
         <h2 className="text-xl font-semibold mb-2">개요</h2>
         <p>팀원: 7명</p>
         <p>역할: AI 개발</p>
-        <p>내용: 외국인 근로자를 위한 통합 어플리케이션 개발</p>
+        <p>수상: 2024년 서울시 새싹 해커톤 장려상(7위)</p>
+        <p>내용: 외국인 근로자를 위한 통합 어플리케이션 개발(11월 앱스토어 출시예정)</p>
       </div>
 
       <div className="mb-7">
