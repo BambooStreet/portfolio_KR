@@ -1,4 +1,5 @@
 import React from 'react';
+import foreignAICC_poster from '../../images/foreignAICC-poster-1.png';
 
 const HelloWorldDescription = () => {
   return (
@@ -14,7 +15,7 @@ const HelloWorldDescription = () => {
         <div className="bg-gray-700 p-2 rounded-lg mb-4">
           {/* 프로젝트 관련 이미지나 로고를 넣을 수 있습니다 */}
           <img 
-            src="/path/to/helloworld-image.png" 
+            src={foreignAICC_poster}
             alt="HelloWorld Project" 
             className="w-full h-48 object-contain mb-2"
           />
