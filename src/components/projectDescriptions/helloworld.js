@@ -180,7 +180,7 @@ const HelloWorldDescription = () => {
         <hr className="my-6 border-gray-600" />
         
 
-        <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+        <div>
           <h3 className="text-lg font-semibold mb-2">5. 배포 프로세스</h3>
           
           <p className="text-gray-300 mb-6">
