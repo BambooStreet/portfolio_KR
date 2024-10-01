@@ -1,5 +1,5 @@
 import React, { useState, lazy, Suspense } from 'react';
-import { FaGithub, FaBlog, FaPython, FaAws, FaDocker, FaMicrosoft, FaReact, FaHtml5, FaCss3Alt, FaRProject } from 'react-icons/fa';
+import { FaGithub, FaBlog, FaPython, FaAws, FaDocker, FaMicrosoft, FaReact, FaHtml5, FaCss3Alt, FaRProject,FaEnvelope  } from 'react-icons/fa';
 import { SiTensorflow, SiPytorch, SiFlask, SiMongodb, SiElasticsearch, SiC, SiCplusplus, SiJavascript } from 'react-icons/si';
 
 import universityImage from './images/sejong-logo.svg';
@@ -150,7 +150,7 @@ const AboutMe = () => {
           <h2 className="text-2xl font-bold mb-4">About Me</h2>
           <p className="text-lg">
             안녕하세요, 세종대학교 데이터사이언스학과에서 공부하고 있는 홍석주입니다. 
-            NLP, 특히 Conversation System에 관심이 많으며, 최근에는 RAG를 활용한 LLM 챗봇과 클라우드 환경에서의 서비스 배포를 공부하고 있습니다.
+            NLP, 특히 텍스트/음성을 매개로한 인간과 AI의 상호작용에 관심이 많으며, 최근에는 RAG를 활용한 LLM 챗봇과 클라우드 환경에서의 서비스 배포를 공부하고 있습니다.
           </p>
         </div>
 
@@ -169,11 +169,21 @@ const AboutMe = () => {
 
         {/* Tech Stack Section */}
         <div className="text-center w-full">
-          <h2 className="text-2xl font-bold mb-6">Tech Stack</h2>
+          <h2 className="text-2xl font-bold mb-4">Tech Stack</h2>
           {Object.entries(techStack).map(([category, items]) => (
             <TechStackCategory key={category} title={category} items={items} />
           ))}
         </div>
+
+         {/* Contact Section */}
+         <div className="text-center w-full">
+          <h2 className="text-2xl font-bold mb-4">Contact</h2>
+          <div className="flex justify-center items-center">
+            <FaEnvelope size={24} className="text-white mr-2" />
+            <span className="text-white text-lg">ohmyhong1234@gmail.com</span>
+          </div>
+        </div>
+
       </div>
     </div>
   );
@@ -210,7 +220,7 @@ const TimelinePortfolio = () => {
     { 
       id: 'sejongmate',
       year: '2023.03~2023.06', 
-      event: "프로젝트1: SejongMate", 
+      event: "프로젝트: SejongMate", 
       description: "세종대학교 학생들을 위한 챗봇 애플리케이션 'SejongMate'",
       isHighlighted: true, 
       imageSrc: project1Image,
@@ -227,8 +237,8 @@ const TimelinePortfolio = () => {
     },
     { 
       id: 'helloworld',
-      year: '2024.06~2024.10', 
-      event: "프로젝트2: HelloWorld", 
+      year: '2024.06~', 
+      event: "프로젝트: HelloWorld", 
       description: "외국인 근로자를위한 통합 플랫폼 'HelloWorld'",
       isHighlighted: true, 
       imageSrc: project2Image,
