@@ -1,14 +1,16 @@
 {
   "files": {
-    "main.css": "/portfolio_KR/static/css/main.ce7c4476.css",
-    "main.js": "/portfolio_KR/static/js/main.db31af60.js",
-    "static/js/784.4c67091e.chunk.js": "/portfolio_KR/static/js/784.4c67091e.chunk.js",
+    "main.css": "/portfolio_KR/static/css/main.7d5edc50.css",
+    "main.js": "/portfolio_KR/static/js/main.79f19081.js",
+    "static/js/784.e0d41726.chunk.js": "/portfolio_KR/static/js/784.e0d41726.chunk.js",
     "static/js/453.78a80aa8.chunk.js": "/portfolio_KR/static/js/453.78a80aa8.chunk.js",
-    "static/js/383.7b212c47.chunk.js": "/portfolio_KR/static/js/383.7b212c47.chunk.js",
-    "static/js/253.9eaff257.chunk.js": "/portfolio_KR/static/js/253.9eaff257.chunk.js",
+    "static/js/234.88770735.chunk.js": "/portfolio_KR/static/js/234.88770735.chunk.js",
+    "static/js/253.cd77b2a4.chunk.js": "/portfolio_KR/static/js/253.cd77b2a4.chunk.js",
     "static/js/33.53b63f88.chunk.js": "/portfolio_KR/static/js/33.53b63f88.chunk.js",
     "static/media/sejongmate-poster.png": "/portfolio_KR/static/media/sejongmate-poster.176c1ac052d530c726a6.png",
     "static/media/foreignAICC-poster-1.png": "/portfolio_KR/static/media/foreignAICC-poster-1.9b59dabfdd155604f7ef.png",
+    "static/media/me.jpg": "/portfolio_KR/static/media/me.11f7d297857a0accb1cd.jpg",
+    "static/media/ERTI-task1.png": "/portfolio_KR/static/media/ERTI-task1.4b31e07d636ee19cfc34.png",
     "static/media/sejongmate-model1.png": "/portfolio_KR/static/media/sejongmate-model1.57e96a0bf7085a050740.png",
     "static/media/sejongmate-data2.png": "/portfolio_KR/static/media/sejongmate-data2.f4fa10ca302636b897d5.png",
     "static/media/sejongmate-model3.png": "/portfolio_KR/static/media/sejongmate-model3.c688f2da4985e63358ac.png",
@@ -23,16 +25,16 @@
     "static/media/sejongmate-model2.png": "/portfolio_KR/static/media/sejongmate-model2.40f81b04ed3aebea93b9.png",
     "static/media/ETRI-logo.png": "/portfolio_KR/static/media/ETRI-logo.e76cac3d23ecd14f6679.png",
     "index.html": "/portfolio_KR/index.html",
-    "main.ce7c4476.css.map": "/portfolio_KR/static/css/main.ce7c4476.css.map",
-    "main.db31af60.js.map": "/portfolio_KR/static/js/main.db31af60.js.map",
-    "784.4c67091e.chunk.js.map": "/portfolio_KR/static/js/784.4c67091e.chunk.js.map",
+    "main.7d5edc50.css.map": "/portfolio_KR/static/css/main.7d5edc50.css.map",
+    "main.79f19081.js.map": "/portfolio_KR/static/js/main.79f19081.js.map",
+    "784.e0d41726.chunk.js.map": "/portfolio_KR/static/js/784.e0d41726.chunk.js.map",
     "453.78a80aa8.chunk.js.map": "/portfolio_KR/static/js/453.78a80aa8.chunk.js.map",
-    "383.7b212c47.chunk.js.map": "/portfolio_KR/static/js/383.7b212c47.chunk.js.map",
-    "253.9eaff257.chunk.js.map": "/portfolio_KR/static/js/253.9eaff257.chunk.js.map",
+    "234.88770735.chunk.js.map": "/portfolio_KR/static/js/234.88770735.chunk.js.map",
+    "253.cd77b2a4.chunk.js.map": "/portfolio_KR/static/js/253.cd77b2a4.chunk.js.map",
     "33.53b63f88.chunk.js.map": "/portfolio_KR/static/js/33.53b63f88.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ce7c4476.css",
-    "static/js/main.db31af60.js"
+    "static/css/main.7d5edc50.css",
+    "static/js/main.79f19081.js"
   ]
 }
