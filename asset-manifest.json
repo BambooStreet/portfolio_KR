@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio_KR/static/css/main.7d5edc50.css",
-    "main.js": "/portfolio_KR/static/js/main.79f19081.js",
+    "main.css": "/portfolio_KR/static/css/main.334e2e8c.css",
+    "main.js": "/portfolio_KR/static/js/main.9d66db15.js",
     "static/js/784.e0d41726.chunk.js": "/portfolio_KR/static/js/784.e0d41726.chunk.js",
     "static/js/453.78a80aa8.chunk.js": "/portfolio_KR/static/js/453.78a80aa8.chunk.js",
     "static/js/234.88770735.chunk.js": "/portfolio_KR/static/js/234.88770735.chunk.js",
@@ -25,8 +25,8 @@
     "static/media/sejongmate-model2.png": "/portfolio_KR/static/media/sejongmate-model2.40f81b04ed3aebea93b9.png",
     "static/media/ETRI-logo.png": "/portfolio_KR/static/media/ETRI-logo.e76cac3d23ecd14f6679.png",
     "index.html": "/portfolio_KR/index.html",
-    "main.7d5edc50.css.map": "/portfolio_KR/static/css/main.7d5edc50.css.map",
-    "main.79f19081.js.map": "/portfolio_KR/static/js/main.79f19081.js.map",
+    "main.334e2e8c.css.map": "/portfolio_KR/static/css/main.334e2e8c.css.map",
+    "main.9d66db15.js.map": "/portfolio_KR/static/js/main.9d66db15.js.map",
     "784.e0d41726.chunk.js.map": "/portfolio_KR/static/js/784.e0d41726.chunk.js.map",
     "453.78a80aa8.chunk.js.map": "/portfolio_KR/static/js/453.78a80aa8.chunk.js.map",
     "234.88770735.chunk.js.map": "/portfolio_KR/static/js/234.88770735.chunk.js.map",
@@ -34,7 +34,7 @@
     "33.53b63f88.chunk.js.map": "/portfolio_KR/static/js/33.53b63f88.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7d5edc50.css",
-    "static/js/main.79f19081.js"
+    "static/css/main.334e2e8c.css",
+    "static/js/main.9d66db15.js"
   ]
 }
