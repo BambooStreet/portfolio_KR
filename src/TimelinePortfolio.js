@@ -1,6 +1,6 @@
 import React, { useState, lazy, Suspense } from 'react';
-import { FaGithub, FaBlog, FaPython, FaAws, FaDocker, FaMicrosoft  } from 'react-icons/fa';
-import { SiTensorflow, SiPytorch, SiFlask, SiMongodb, SiElasticsearch, SiC, SiCplusplus } from 'react-icons/si';
+import { FaGithub, FaBlog, FaPython, FaAws, FaDocker, FaMicrosoft, FaReact, FaHtml5, FaCss3Alt, FaRProject } from 'react-icons/fa';
+import { SiTensorflow, SiPytorch, SiFlask, SiMongodb, SiElasticsearch, SiC, SiCplusplus, SiJavascript } from 'react-icons/si';
 
 import universityImage from './images/sejong-logo.svg';
 import project1Image from './images/sejongmate-logo.png';
@@ -111,24 +111,31 @@ const TechStackCategory = ({ title, items }) => (
 
 const AboutMe = () => {
   const techStack = {
-    Languages: [
+    "Languages": [
       { name: "Python", icon: <FaPython className="text-blue-500" /> },
+      { name: "R", icon: <FaRProject className="text-blue-600" /> },
       { name: "C", icon: <SiC className="text-blue-300" /> },
       { name: "C++", icon: <SiCplusplus className="text-blue-400" /> }
     ],
-    Frameworks: [
+    "Frameworks": [
       { name: "TensorFlow", icon: <SiTensorflow className="text-orange-500" /> },
       { name: "PyTorch", icon: <SiPytorch className="text-red-500" /> },
       { name: "Flask", icon: <SiFlask className="text-green-500" /> }
     ],
-    Databases: [
+    "Databases": [
       { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
       { name: "Elasticsearch", icon: <SiElasticsearch className="text-yellow-500" /> }
     ],
-    Cloud: [
+    "Cloud & DevOps": [
       { name: "AWS", icon: <FaAws className="text-yellow-500" /> },
       { name: "Azure", icon: <FaMicrosoft className="text-blue-500" /> },
       { name: "Docker", icon: <FaDocker className="text-blue-400" /> }
+    ],
+    "Web": [
+      { name: "React", icon: <FaReact className="text-blue-400" /> },
+      { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
+      { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
+      { name: "JavaScript", icon: <SiJavascript className="text-yellow-400" /> }
     ]
   };
 
