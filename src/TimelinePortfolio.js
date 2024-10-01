@@ -1,8 +1,12 @@
 import React, { useState, lazy, Suspense } from 'react';
+import { FaGithub, FaBlog, FaPython, FaAws, FaDocker, FaMicrosoft  } from 'react-icons/fa';
+import { SiTensorflow, SiPytorch, SiFlask, SiMongodb, SiElasticsearch, SiC, SiCplusplus } from 'react-icons/si';
+
 import universityImage from './images/sejong-logo.svg';
 import project1Image from './images/sejongmate-logo.png';
 import internImage from './images/ETRI-logo.png';
 import project2Image from './images/HelloWorld-logo.png';
+import me from './images/me.jpg';
 
 const ProjectDescription = lazy(() => import('./components/ProjectDescription'));
 
@@ -90,6 +94,84 @@ const TimelineItem = ({ id, year, event, description, isHighlighted, imageSrc, i
   );
 };
 
+
+const TechStackCategory = ({ title, items }) => (
+  <div className="mb-6">
+    <h3 className="text-lg font-semibold mb-2 text-gray-300">{title}</h3>
+    <div className="flex flex-wrap justify-center gap-3">
+      {items.map((item, index) => (
+        <div key={index} className="flex items-center bg-gray-700 rounded-full px-3 py-1 text-sm hover:bg-gray-600 transition-colors duration-200">
+          {item.icon}
+          <span className="ml-2">{item.name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+const AboutMe = () => {
+  const techStack = {
+    Languages: [
+      { name: "Python", icon: <FaPython className="text-blue-500" /> },
+      { name: "C", icon: <SiC className="text-blue-300" /> },
+      { name: "C++", icon: <SiCplusplus className="text-blue-400" /> }
+    ],
+    Frameworks: [
+      { name: "TensorFlow", icon: <SiTensorflow className="text-orange-500" /> },
+      { name: "PyTorch", icon: <SiPytorch className="text-red-500" /> },
+      { name: "Flask", icon: <SiFlask className="text-green-500" /> }
+    ],
+    Databases: [
+      { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
+      { name: "Elasticsearch", icon: <SiElasticsearch className="text-yellow-500" /> }
+    ],
+    Cloud: [
+      { name: "AWS", icon: <FaAws className="text-yellow-500" /> },
+      { name: "Azure", icon: <FaMicrosoft className="text-blue-500" /> },
+      { name: "Docker", icon: <FaDocker className="text-blue-400" /> }
+    ]
+  };
+
+  return (
+    <div className="bg-gray-800 p-8 rounded-lg shadow-lg mb-32 mx-auto max-w-5xl">
+      <div className="flex flex-col items-center space-y-12">
+        {/* About Me Section */}
+        <div className="flex flex-col items-center text-center max-w-2xl">
+          <div className="w-48 h-48 overflow-hidden mb-6 rounded-full shadow-xl">
+            <img src={me} alt="홍석주" className="w-full h-full object-cover" />
+          </div>
+          <h2 className="text-2xl font-bold mb-4">About Me</h2>
+          <p className="text-lg">
+            안녕하세요, 세종대학교 데이터사이언스학과에서 공부하고 있는 홍석주입니다. 
+            NLP, 특히 Conversation System에 관심이 많으며, 최근에는 RAG를 활용한 LLM 챗봇과 클라우드 환경에서의 서비스 배포를 공부하고 있습니다.
+          </p>
+        </div>
+
+        {/* Github/Blog Section */}
+        <div className="text-center">
+          <h2 className="text-2xl font-bold mb-4">Github/Blog</h2>
+          <div className="flex justify-center space-x-4">
+            <a href="https://github.com/BambooStreet" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400 transition-colors duration-200">
+              <FaGithub size={36} />
+            </a>
+            <a href="https://bamboostreet.github.io/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400 transition-colors duration-200">
+              <FaBlog size={36} />
+            </a>
+          </div>
+        </div>
+
+        {/* Tech Stack Section */}
+        <div className="text-center w-full">
+          <h2 className="text-2xl font-bold mb-6">Tech Stack</h2>
+          {Object.entries(techStack).map(([category, items]) => (
+            <TechStackCategory key={category} title={category} items={items} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const TimelinePortfolio = () => {
   const events = [
     { 
@@ -150,7 +232,9 @@ const TimelinePortfolio = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-white p-8">
       <h1 className="text-4xl font-bold mb-16 text-center">Welcome! SeokJoo Hong's Portfolio</h1>
+      <AboutMe />
       <div className="max-w-6xl mx-auto relative">
+        <h1 className="text-4xl font-bold mb-16 text-center">Works</h1>
         <div className="absolute w-1 bg-gray-400 h-full left-1/2 transform -translate-x-1/2"></div>
         {events.map((item, index) => (
           <TimelineItem key={index} {...item} isLeft={index % 2 !== 0} />

@@ -1,23 +1,14 @@
 import React from 'react';
+import ETRI_task from '../../images/ERTI-task1.png';
 
 const ETRIExperience = () => {
   return (
     <div className="text-white">
       <div className="mb-6">
-        <h2 className="text-xl font-semibold mb-2">ETRI 경험</h2>
+        <h2 className="text-xl font-semibold mb-2">과제: 전문가 의사결정 지원 인공지능 기술 개발</h2>
         <p>직책: 연구연수생</p>
       </div>
-
-      <div className="mb-6">
-        <div className="bg-gray-700 p-2 rounded-lg mb-4">
-          {/* ETRI 로고나 관련 이미지를 넣을 수 있습니다 */}
-          <img 
-            src="/path/to/etri-logo.png" 
-            alt="ETRI Logo" 
-            className="w-full h-48 object-contain mb-2"
-          />
-        </div>
-      </div>
+      <img src={ETRI_task} alt="Data processing" className="w-4/5 mx-auto mb-4" />       
 
       <hr className="my-6 border-gray-600" />
 
