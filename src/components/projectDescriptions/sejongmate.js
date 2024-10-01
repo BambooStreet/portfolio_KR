@@ -53,23 +53,23 @@ const SejongmateDescription = () => {
 
           <p>
             <h3 className="text-m font-semibold mb-2">1-2. QA 데이터셋 생성</h3>
-            <img src={sejongmateData2} alt="Data processing" className="w-4/5 mx-auto mb-4" />  
+            <img src={sejongmateData2} alt="Data processing" className="w-3/5 mx-auto mb-4" />  
             <li> 대학 커뮤니티 플랫폼 '에브리타임'에서 앞서 추출한 키워드별 질문 수집</li>
-            <li> 수집된 질문 + chunking한 교내 문서를 input으로, GPT-turbo-3.5를 활용해 Answer생성 약 10,000개의 QA데이터 생성</li>
+            <li> 수집된 키워드별 질문 + chunking한 교내 문서 + GPT-turbo-3.5를 활용해 질문에 대한 답변 생성 약 10,000개의 QA데이터 생성</li>
             <br></br>
           </p>
 
           <p>
             <h3 className="text-m font-semibold mb-2">1-3. 신뢰성 검증</h3>
             {/* <img src={sejongmateData1} alt="Data processing" className="w-4/5 mx-auto mb-4" />   */}
-            <p> 한달여의 기간동안 사람이 직접 데이터 신뢰성 검증</p>
+            <p> 한달여의 기간동안 AI파트가 직접 데이터 신뢰성 검증</p>
             <br></br>
           </p>
 
           <p>
             <h3 className="text-m font-semibold mb-2">1-4. 데이터 증강(설문조사)</h3>
-            <img src={sejongmateData3} alt="Data processing" className="w-4/5 mx-auto mb-4" />  
-            <p> 재학생 및 졸업생들을 대상으로 설문조사, 유저 피드백 반영한 QA데이터 추가</p>
+            <img src={sejongmateData3} alt="Data processing" className="w-3/5 mx-auto mb-4" />  
+            <p> 재학생 및 졸업생들을 대상으로 설문조사를 실시, 이후 유저 피드백 반영한 '학교 근처 맛집', '학식 메뉴 추천' 등의 일상대화 QA데이터 추가</p>
             <br></br>
           </p>
 
@@ -77,7 +77,7 @@ const SejongmateDescription = () => {
           <p>
             <h3 className="text-m font-semibold mb-2">1-5. 데이터 증강(자연어처리)</h3>
             <img src={sejongmateData4} alt="Data processing" className="w-2/5 mx-auto mb-4" />  
-            <p> 질문 포맷 지정, 유사어/준말 어휘 증강, 문장 내 단어 랜덤 스왑으로 데이터 증강</p>
+            <p> 질문 포맷 지정, 유사어/준말 어휘 증강, 문장 내 단어 랜덤 스왑으로 약 40,000개의 데이터 증강</p>
             <br></br>
           </p>
           
@@ -94,25 +94,25 @@ const SejongmateDescription = () => {
           
           <p>
             <h3 className="text-m font-semibold mb-2">2-1. 모델 선정(유사도 계산)</h3>
-            <img src={sejongmateModel1} alt="Data processing" className="w-4/5 mx-auto mb-4" />  
-            <p> SBERT model을 KLUE-NLI, KorSTS 데이터셋으로 파인튜닝한 KR-SBERT 모델을 사용하여, 유저 쿼리와 세종대학교 데이터셋(질문)과의 임베딩 벡터 계산</p>
+            <img src={sejongmateModel1} alt="Data processing" className="w-3/5 mx-auto mb-4" />  
+            <p> SBERT model을 KLUE-NLI, KorSTS 데이터셋으로 파인튜닝한 KR-SBERT 모델을 사용, 유저 쿼리와 데이터셋(질문)과의 임베딩 벡터 계산</p>
             <br></br>
           </p>
 
           <p>
             <h3 className="text-m font-semibold mb-2">2-2. 모델 선정(생성 모델)</h3>
-            <img src={sejongmateModel2} alt="Data processing" className="w-4/5 mx-auto mb-4" />  
-            <p>당시 한국어 기반 생성 모델 중 적절한 비용 안에서 활용 가능했던 KoGPT 활용,</p>
-            <p>하지만 성능 이슈가 존재(수치 오류: 모든 졸업학점을 130학점으로 출력, 정보 오류: 세부 항목에서 잘못된 답변 출력)</p>
+            <img src={sejongmateModel2} alt="Data processing" className="w-3/5 mx-auto mb-4" />  
+            <p>당시 한국어 기반 생성 모델 중 가용 GPU 사양(A100)을 고려해 KoGPT 모델 활용,</p>
+            <p>하지만 성능 이슈가 존재 (수치 오류: 모든 졸업학점을 130학점으로 출력, 정보 오류: 세부 항목에서 잘못된 답변 출력)</p>
             <p>생성 모델만 활용하는 것은 답변 신뢰도 측면에서 위험하다고 판단, Rule-base와 조합해 아래 아키텍처로 구현</p>
             <br></br>
           </p>
 
           <p>
             <h3 className="text-m font-semibold mb-2">2-3. 전체 아키텍처 구성</h3>
-            <img src={sejongmateModel3} alt="Data processing" className="w-4/5 mx-auto mb-4" />  
+            <img src={sejongmateModel3} alt="Data processing" className="w-3/5 mx-auto mb-4" />  
             <p> 입력된 쿼리와 계산된 데이터와의 유사도 0.75를 기준으로</p>
-            <p> 0.75 이상은 학교 관련 질문으로 판단해 유사도 기반 룰베이스 답변 제공</p>
+            <p> 0.75 이상은 학교 관련 질문으로 판단해 유사도 기반 Rull-base 답변 제공</p>
             <p> 0.75 이하는 일상 대화로 판단, 일상 대화가 학습된 KoGPT로 처리</p>
             <br></br>
           </p>
@@ -129,15 +129,16 @@ const SejongmateDescription = () => {
           
           <p>
             <h3 className="text-m font-semibold mb-2">3-1. Flask 애플리케이션 구축</h3>
-            <img src={sejongmateDeploy1} alt="Data processing" className="w-4/5 mx-auto mb-4" />  
-            <p> Flask 활용</p>
+            <img src={sejongmateDeploy1} alt="Data processing" className="w-3/5 mx-auto mb-4" />  
+            <p> RESTful 아키텍처 원칙을 적용하여 확장 가능하고 유지보수가 용이한 API 엔드포인트를 설계했으며, 
+            Flask-RESTful 확장을 사용하여 효율적인 리소스 관리와 요청 처리를 구현</p>
             <br></br>
           </p>
 
           <p>
             <h3 className="text-m font-semibold mb-2">3-2. AWS EC2 인스턴스 배포</h3>
-            <img src={sejongmateDeploy2} alt="Data processing" className="w-4/5 mx-auto mb-4" />  
-            <li> EC2 인스턴스 활용</li>
+            <img src={sejongmateDeploy2} alt="Data processing" className="w-3/5 mx-auto mb-4" />  
+            <p>AWS EC2(Elastic Compute Cloud) 인스턴스를 활용하여 확장 가능한 클라우드 기반 애플리케이션 환경을 구축</p>
             <br></br>
           </p>
 
