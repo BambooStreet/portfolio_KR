@@ -78,7 +78,7 @@ const HelloWorldDescription = () => {
           <p>
             <h3 className="text-m font-semibold mb-2">2-2. vector search DB선정</h3>
             <img src={helloworld_RAG3} alt="Data processing" className="w-3/5 mx-auto mb-4" />  
-            <p> ElasticSearch vectorDB 활용해 초기 데이터베이스 구축, 현재 MongoDB로 마이그레이션해 운용 중</p>
+            <p> ElasticSearch vectorDB 활용해 초기 데이터베이스 구축, 현재 MongoDB로 전환해 운용 중</p>
             <br></br>
           </p>
         </div>
@@ -156,7 +156,7 @@ const HelloWorldDescription = () => {
           </p>
 
           <p>
-            <h3 className="text-m font-semibold mb-2">4-3. 양자화, vLLM활용 실험</h3>
+            <h3 className="text-m font-semibold mb-2">4-3. , vLLM활용 실험</h3>
             <img src={helloworld_chatbot3} alt="Data processing" className="w-3/5 mx-auto mb-4" />
             <ul className="list-disc list-inside mt-2 text-gray-300">  
             <li> 최종 선정된 llama-3 blossom 8b 모델, 클라우드 환경에서 배포를 위해 성능과 하드웨어 최적화 실험 진행</li>
@@ -168,8 +168,8 @@ const HelloWorldDescription = () => {
               href="https://bamboostreet.github.io/posts/Helloworld_vllm/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300"
-              aria-label="양자화_vllm"
+              className="inline-block bg-blue-500 hover:bg-blue-060 text-white font-bold py-2 px-4 rounded transition duration-300"
+              aria-label="양자화_vllm"양자화
             >
               관련 개인 블로그 정리
             </a>
