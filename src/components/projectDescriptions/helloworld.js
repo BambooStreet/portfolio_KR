@@ -150,17 +150,17 @@ const HelloWorldDescription = () => {
             </p>
             <ul className="list-disc list-inside mt-2 text-gray-300">
               <li>LLaMA-3 기반의 한국어 특화 모델을 선정하여 추론 성능 실험 진행</li>
-              <li>다양한 모델 크기(7B, 13B, 34B)에 대한 추론 성능 및 리소스 사용량 비교 분석</li>
+              <li>다양한 모델 크기에 대한 추론 성능 및 리소스 사용량 비교 분석, llama-3-Korean-Bllossom-8B모델 최종 결정</li>
             </ul>
             <br></br>
           </p>
 
           <p>
-            <h3 className="text-m font-semibold mb-2">4-3. , vLLM활용 실험</h3>
+            <h3 className="text-m font-semibold mb-2">4-3. sLLM 최적화 실험</h3>
             <img src={helloworld_chatbot3} alt="Data processing" className="w-3/5 mx-auto mb-4" />
             <ul className="list-disc list-inside mt-2 text-gray-300">  
             <li> 최종 선정된 llama-3 blossom 8b 모델, 클라우드 환경에서 배포를 위해 성능과 하드웨어 최적화 실험 진행</li>
-            <li> 원본모델의 양자화, vLLM 적용 여부에 따른 하드웨어 사용량과 추론 성능 비교</li>
+            <li> 원본모델(llama-3-Korean-Bllossom-8B)의 양자화, vLLM 적용 여부에 따른 하드웨어 사용량과 추론 성능 비교</li>
             </ul>
             <br></br>
 
