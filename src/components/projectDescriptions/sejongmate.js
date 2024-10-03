@@ -53,30 +53,25 @@ const SejongmateDescription = () => {
           </div>
 
           <div className="mb-10">
-            <h3 className="text-m font-semibold mb-2">1-2. QA 데이터셋 생성</h3>
+            <h3 className="text-m font-semibold mb-2">1-2. QA 데이터셋 생성 및 검증</h3>
             <img src={sejongmateData2} alt="Data processing" className="w-3/5 mx-auto mb-4" />  
             <li> 질문 데이터셋 구축을 위해 기존 수집된 학교 문서를 기반으로 GPT-api를 활용해 질문을 생성하도록 했습니다.</li>
             <li> 추가적으로, 실제 유저가 할법한 질문을 수집하기 위해, 대학 커뮤니티 플랫폼 '에브리타임'에서 질문을 수집했습니다. 
               구체적으로 설명하자면, 키워드를 기준으로 검색한 뒤, 물음표로 끝나는 게시글 제목을 수집하는 방식을 사용했습니다.</li>
             <li> 수집된 질문들과 관련 교내 문서를 하나의 input으로 만들고, GPT 프롬프팅을 통해 질문에 대한 답변을 생성하도록 했습니다.
                이 방법으로 약 10,000개의 QA데이터 생성했습니다.</li>
+            <li> 한달의 기간동안 직접 교내 문서를 참고하며 생성한 QA데이터의 신뢰성을 검증했습니다.</li>
           </div>  
 
           <div className="mb-10">
-            <h3 className="text-m font-semibold mb-2">1-3. 신뢰성 검증</h3>
-            {/* <img src={sejongmateData1} alt="Data processing" className="w-4/5 mx-auto mb-4" />   */}
-            <li> 한달의 기간동안 직접 교내 문서를 참고하며 생성한 QA데이터의 신뢰성을 검증했습니다.</li>
-          </div>
-
-          <div className="mb-10">
-            <h3 className="text-m font-semibold mb-2">1-4. 데이터 증강(설문조사)</h3>
+            <h3 className="text-m font-semibold mb-2">1-3. 데이터 증강(설문조사)</h3>
             <img src={sejongmateData3} alt="Data processing" className="w-3/5 mx-auto mb-4" />  
             <li> 유저 중심의 데이터셋을 추가하기 위해 재학생 및 졸업생들을 대상으로 설문조사를 실시했습니다. 이후 유저 피드백을 반영한 '학교 근처 맛집', '학식 메뉴 추천' 등의 일상대화 QA데이터를 추가했습니다.</li>
           </div>
 
           
           <div className="mb-10">
-            <h3 className="text-m font-semibold mb-2">1-5. 데이터 증강(증강기법 활용)</h3>
+            <h3 className="text-m font-semibold mb-2">1-4. 데이터 증강(증강기법 활용)</h3>
             <img src={sejongmateData4} alt="Data processing" className="w-2/5 mx-auto mb-4" />  
             <li> 데이터 증강을 위해 "질문 포맷 지정", "유사어/준말 어휘 증강", "문장 내 단어 랜덤 스왑" 기법들을 활용했고, 약 10,000개에서 약 40,000개로 데이터를 증강했습니다.</li>
             <br></br>
@@ -135,7 +130,7 @@ const SejongmateDescription = () => {
           <div className="mb-10">
             <h3 className="text-m font-semibold mb-2">3-2. AWS EC2 인스턴스 배포</h3>
             {/* <img src={sejongmateDeploy2} alt="Data processing" className="w-3/5 mx-auto mb-4" />   */}
-            <p>AWS EC2(Elastic Compute Cloud) 인스턴스를 활용하여 확장 가능한 클라우드 기반 애플리케이션 환경을 구축했습니다.</p>
+            <p>AWS EC2(Elastic Compute Cloud) 인스턴스를 활용하여 LLM(Large Language Model)을 배포하고, 이를 백엔드 서비스와 연동한 확장 가능한 클라우드 기반 애플리케이션 환경을 구축했습니다.</p>
           </div>
 
         </div>
