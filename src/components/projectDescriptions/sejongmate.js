@@ -8,7 +8,7 @@ import sejongmateModel1 from '../../images/sejongmate-model1.png';
 import sejongmateModel2 from '../../images/sejongmate-model2.png';
 import sejongmateModel3 from '../../images/sejongmate-model3.png';
 import sejongmateDeploy1 from '../../images/sejongmate-deploy1.png';
-import sejongmateDeploy2 from '../../images/sejongmate-deploy2.png';
+// import sejongmateDeploy2 from '../../images/sejongmate-deploy2.png';
 
 const SejongmateDescription = () => {
   return (
@@ -41,7 +41,7 @@ const SejongmateDescription = () => {
         <div>
           <div className="mb-10">
             <h3 className="text-lg font-semibold mb-4">1. 데이터 수집, 검증</h3>
-            <p className="mb-4 text-gray-200 leading-relaxed">
+            <p className="mb-10 text-gray-200 leading-relaxed">
               데이터 수집 단계에서, 사용자 중심의 데이터 수집 전략의 중요성을 인지하고, 체계적인 접근 방식을 채택했습니다.
             </p>
           </div>
@@ -88,8 +88,8 @@ const SejongmateDescription = () => {
         <hr className="my-6 border-gray-600" />
         
         <div>
-          <h3 className="text-lg font-semibold mb-10">2. 모델 선정, 핵심 로직 구현</h3>
-          <p className="mb-4 text-gray-200 leading-relaxed">
+          <h3 className="text-lg font-semibold mb-4">2. 모델 선정, 핵심 로직 구현</h3>
+          <p className="mb-10 text-gray-200 leading-relaxed">
             사용 가능한 자원과 비용을 고려해 모델을 선정하고, 답변 반환 로직을 구축했습니다.
           </p>
           
@@ -111,35 +111,32 @@ const SejongmateDescription = () => {
           <div className="mb-10">
             <h3 className="text-m font-semibold mb-2">2-3. 전체 아키텍처 구성</h3>
             <img src={sejongmateModel3} alt="Data processing" className="w-3/5 mx-auto mb-4" />  
-            <li> 입력된 쿼리와 계산된 데이터와의 유사도 0.75를 기준으로</li>
-            <li> 0.75 이상은 학교 관련 질문으로 판단해 유사도 기반 Rull-base 답변 제공</li>
-            <li> 0.75 이하는 일상 대화로 판단, 일상 대화가 학습된 KoGPT로 처리</li>
+            <li> 최종 구현된 답변 반환 아키텍처는 입력된 유저 쿼리와 질문 데이터와의 유사도 0.75를 기준으로 답변 반환 로직이 변경됩니다.</li>
+            <li> 0.75 이상은 학교 관련 질문으로 판단해 유사도 기반 Rull-base 답변을 제공합니다.</li>
+            <li> 0.75 이하는 일상 대화로 판단해, 일상 대화와 QA데이터로 Fine-Tuning한 KoGPT로 처리됩니다.</li>
           </div>
-
         </div>
         
         <hr className="my-6 border-gray-600" />
 
         <div>
           <h3 className="text-lg font-semibold mb-2">3. 모델 배포</h3>
-          <p className="mb-4 text-gray-300 leading-relaxed">
-            사용 가능한 자원 고려해 모델 배포
+          <img src={sejongmateDeploy1} alt="Data processing" className="w-3/5 mx-auto mb-4" />  
+          <p className="mb-4 text-gray-200 leading-relaxed">
           </p>
           
-          <p>
+          <div className="mb-10">
             <h3 className="text-m font-semibold mb-2">3-1. Flask 애플리케이션 구축</h3>
-            <img src={sejongmateDeploy1} alt="Data processing" className="w-3/5 mx-auto mb-4" />  
-            <p> RESTful 아키텍처 원칙을 적용하여 확장 가능하고 유지보수가 용이한 API 엔드포인트를 설계했으며, 
-            Flask-RESTful 확장을 사용하여 효율적인 리소스 관리와 요청 처리를 구현</p>
-            <br></br>
-          </p>
+            {/* <img src={sejongmateDeploy1} alt="Data processing" className="w-3/5 mx-auto mb-4" />   */}
+            <li> Python 기반의 경량 웹 프레임워크인 Flask를 사용하여 API를 구축했습니다.</li>
+            <li> GET, POST 등의 HTTP 메서드에 대한 처리 로직을 구현했습니다.</li>
+          </div>
 
-          <p>
+          <div className="mb-10">
             <h3 className="text-m font-semibold mb-2">3-2. AWS EC2 인스턴스 배포</h3>
-            <img src={sejongmateDeploy2} alt="Data processing" className="w-3/5 mx-auto mb-4" />  
-            <p>AWS EC2(Elastic Compute Cloud) 인스턴스를 활용하여 확장 가능한 클라우드 기반 애플리케이션 환경을 구축</p>
-            <br></br>
-          </p>
+            {/* <img src={sejongmateDeploy2} alt="Data processing" className="w-3/5 mx-auto mb-4" />   */}
+            <p>AWS EC2(Elastic Compute Cloud) 인스턴스를 활용하여 확장 가능한 클라우드 기반 애플리케이션 환경을 구축했습니다.</p>
+          </div>
 
         </div>
         
@@ -149,8 +146,10 @@ const SejongmateDescription = () => {
       
       <div className="flex flex-wrap gap-2">
         <span className="bg-blue-500 text-white px-2 py-1 rounded">python</span>
+        <span className="bg-blue-500 text-white px-2 py-1 rounded">LLM</span>
+        <span className="bg-blue-500 text-white px-2 py-1 rounded">GPT</span>
         <span className="bg-blue-500 text-white px-2 py-1 rounded">AWS</span>
-        <span className="bg-blue-500 text-white px-2 py-1 rounded">pythorch</span>
+        
       </div>
     </div>
   );
