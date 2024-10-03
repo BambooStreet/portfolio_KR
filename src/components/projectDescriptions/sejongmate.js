@@ -39,47 +39,48 @@ const SejongmateDescription = () => {
         <h2 className="text-xl font-semibold mb-2">수행 역할</h2>
         
         <div>
-          <h3 className="text-lg font-semibold mb-2">1. 데이터 수집, 검증</h3>
-          <p className="mb-4 text-gray-300 leading-relaxed">
-            데이터 수집 단계에서, 사용자 중심의 데이터 수집 전략의 중요성을 인지하고, 체계적인 접근 방식을 채택했습니다.
-          </p>
+          <div className="mb-10">
+            <h3 className="text-lg font-semibold mb-4">1. 데이터 수집, 검증</h3>
+            <p className="mb-4 text-gray-200 leading-relaxed">
+              데이터 수집 단계에서, 사용자 중심의 데이터 수집 전략의 중요성을 인지하고, 체계적인 접근 방식을 채택했습니다.
+            </p>
+          </div>
           
-          <p>
+          <div className="mb-10">
             <h3 className="text-m font-semibold mb-2">1-1. 키워드 선정</h3>
             <img src={sejongmateData1} alt="Data processing" className="w-4/5 mx-auto mb-4" />  
-            <p> 교내 학사요람을 참고해, '전과','공학인증','출결' 등 핵심 키워드 선정</p>
-            <br></br>
-          </p>
+            <li> 교내 학사요람을 참고해, '전과','공학인증','출결' 등 핵심 키워드를 선정했습니다.</li>
+          </div>
 
-          <p>
+          <div className="mb-10">
             <h3 className="text-m font-semibold mb-2">1-2. QA 데이터셋 생성</h3>
             <img src={sejongmateData2} alt="Data processing" className="w-3/5 mx-auto mb-4" />  
-            <li> 대학 커뮤니티 플랫폼 '에브리타임'에서 앞서 추출한 키워드별 질문 수집</li>
-            <li> 수집된 키워드별 질문 + chunking한 교내 문서 + GPT-turbo-3.5를 활용해 질문에 대한 답변 생성 약 10,000개의 QA데이터 생성</li>
-            <br></br>
-          </p>
+            <li> 질문 데이터셋 구축을 위해 기존 수집된 학교 문서를 기반으로 GPT-api를 활용해 질문을 생성하도록 했습니다.</li>
+            <li> 추가적으로, 실제 유저가 할법한 질문을 수집하기 위해, 대학 커뮤니티 플랫폼 '에브리타임'에서 질문을 수집했습니다. 
+              구체적으로 설명하자면, 키워드를 기준으로 검색한 뒤, 물음표로 끝나는 게시글 제목을 수집하는 방식을 사용했습니다.</li>
+            <li> 수집된 질문들과 관련 교내 문서를 하나의 input으로 만들고, GPT 프롬프팅을 통해 질문에 대한 답변을 생성하도록 했습니다.
+               이 방법으로 약 10,000개의 QA데이터 생성했습니다.</li>
+          </div>  
 
-          <p>
+          <div className="mb-10">
             <h3 className="text-m font-semibold mb-2">1-3. 신뢰성 검증</h3>
             {/* <img src={sejongmateData1} alt="Data processing" className="w-4/5 mx-auto mb-4" />   */}
-            <p> 한달여의 기간동안 AI파트가 직접 데이터 신뢰성 검증</p>
-            <br></br>
-          </p>
+            <li> 한달의 기간동안 직접 교내 문서를 참고하며 생성한 QA데이터의 신뢰성을 검증했습니다.</li>
+          </div>
 
-          <p>
+          <div className="mb-10">
             <h3 className="text-m font-semibold mb-2">1-4. 데이터 증강(설문조사)</h3>
             <img src={sejongmateData3} alt="Data processing" className="w-3/5 mx-auto mb-4" />  
-            <p> 재학생 및 졸업생들을 대상으로 설문조사를 실시, 이후 유저 피드백 반영한 '학교 근처 맛집', '학식 메뉴 추천' 등의 일상대화 QA데이터 추가</p>
-            <br></br>
-          </p>
+            <li> 유저 중심의 데이터셋을 추가하기 위해 재학생 및 졸업생들을 대상으로 설문조사를 실시했습니다. 이후 유저 피드백을 반영한 '학교 근처 맛집', '학식 메뉴 추천' 등의 일상대화 QA데이터를 추가했습니다.</li>
+          </div>
 
           
-          <p>
-            <h3 className="text-m font-semibold mb-2">1-5. 데이터 증강(자연어처리)</h3>
+          <div className="mb-10">
+            <h3 className="text-m font-semibold mb-2">1-5. 데이터 증강(증강기법 활용)</h3>
             <img src={sejongmateData4} alt="Data processing" className="w-2/5 mx-auto mb-4" />  
-            <p> 질문 포맷 지정, 유사어/준말 어휘 증강, 문장 내 단어 랜덤 스왑으로 약 40,000개의 데이터 증강</p>
+            <li> 데이터 증강을 위해 "질문 포맷 지정", "유사어/준말 어휘 증강", "문장 내 단어 랜덤 스왑" 기법들을 활용했고, 약 10,000개에서 약 40,000개로 데이터를 증강했습니다.</li>
             <br></br>
-          </p>
+          </div>
           
         </div>
 
@@ -87,35 +88,33 @@ const SejongmateDescription = () => {
         <hr className="my-6 border-gray-600" />
         
         <div>
-          <h3 className="text-lg font-semibold mb-2">2. 모델 선정, 핵심 로직 구현</h3>
-          <p className="mb-4 text-gray-300 leading-relaxed">
+          <h3 className="text-lg font-semibold mb-10">2. 모델 선정, 핵심 로직 구현</h3>
+          <p className="mb-4 text-gray-200 leading-relaxed">
             사용 가능한 자원과 비용을 고려해 모델을 선정하고, 답변 반환 로직을 구축했습니다.
           </p>
           
-          <p>
-            <h3 className="text-m font-semibold mb-2">2-1. 모델 선정(유사도 계산)</h3>
+          <div className="mb-10">
+            <h3 className="text-m font-semibold mb-2">2-1. 유사도 계산 모델</h3>
             <img src={sejongmateModel1} alt="Data processing" className="w-3/5 mx-auto mb-4" />  
-            <p> SBERT model을 KLUE-NLI, KorSTS 데이터셋으로 파인튜닝한 KR-SBERT 모델을 사용, 유저 쿼리와 데이터셋(질문)과의 임베딩 벡터 계산</p>
-            <br></br>
-          </p>
+            <li> SBERT model을 KLUE-NLI, KorSTS 데이터셋으로 파인튜닝한, 한국어 특화 KR-SBERT 모델을 사용해 유저 쿼리와 데이터셋(질문)과의 임베딩 벡터를 계산했습니다.</li>
+          </div>
 
-          <p>
-            <h3 className="text-m font-semibold mb-2">2-2. 모델 선정(생성 모델)</h3>
+          <div className="mb-10">
+            <h3 className="text-m font-semibold mb-2">2-2. 생성 모델 선정 및 Fine-tuning</h3>
             <img src={sejongmateModel2} alt="Data processing" className="w-3/5 mx-auto mb-4" />  
-            <p>당시 한국어 기반 생성 모델 중 가용 GPU 사양(A100)을 고려해 KoGPT 모델 활용,</p>
-            <p>하지만 성능 이슈가 존재 (수치 오류: 모든 졸업학점을 130학점으로 출력, 정보 오류: 세부 항목에서 잘못된 답변 출력)</p>
-            <p>생성 모델만 활용하는 것은 답변 신뢰도 측면에서 위험하다고 판단, Rule-base와 조합해 아래 아키텍처로 구현</p>
-            <br></br>
-          </p>
+            <li>당시 한국어 기반 생성 모델 중 사용가능한 GPU 사양(A100)을 고려해 KoGPT 모델을 활용했습니다.</li>
+            <li>앞서 구축한 QA데이터셋과 LoRA 기법을 활용해 Parameter-Efficient한 Fine-Tuning을 진행했습니다.</li>
+            <li>하지만 KoGPT 모델을 활용한 성능 테스트에서 몇 가지 이슈가 있었는데, 주요 이슈로는 "모든 졸업학점을 130학점으로 출력"하는 수치 오류와, "세부 항목에서 잘못된 답변을 출력"하는 정보의 신뢰성 오류가 있었습니다.</li>
+            <li>테스트 결과에 대한 의논을 거쳐, 생성 모델만 활용하는 것은 답변 신뢰도 측면에서 위험하다고 판단했고, 유사도에 기반한 Rule-base 기법과 조합해 아래 아키텍처로 최종 구현했습니다.</li>
+          </div>
 
-          <p>
+          <div className="mb-10">
             <h3 className="text-m font-semibold mb-2">2-3. 전체 아키텍처 구성</h3>
             <img src={sejongmateModel3} alt="Data processing" className="w-3/5 mx-auto mb-4" />  
-            <p> 입력된 쿼리와 계산된 데이터와의 유사도 0.75를 기준으로</p>
-            <p> 0.75 이상은 학교 관련 질문으로 판단해 유사도 기반 Rull-base 답변 제공</p>
-            <p> 0.75 이하는 일상 대화로 판단, 일상 대화가 학습된 KoGPT로 처리</p>
-            <br></br>
-          </p>
+            <li> 입력된 쿼리와 계산된 데이터와의 유사도 0.75를 기준으로</li>
+            <li> 0.75 이상은 학교 관련 질문으로 판단해 유사도 기반 Rull-base 답변 제공</li>
+            <li> 0.75 이하는 일상 대화로 판단, 일상 대화가 학습된 KoGPT로 처리</li>
+          </div>
 
         </div>
         
