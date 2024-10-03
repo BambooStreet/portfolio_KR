@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/portfolio_KR/static/css/main.0265fca2.css",
-    "main.js": "/portfolio_KR/static/js/main.a08b9ff2.js",
-    "static/js/784.c4494d6e.chunk.js": "/portfolio_KR/static/js/784.c4494d6e.chunk.js",
+    "main.js": "/portfolio_KR/static/js/main.a79848c7.js",
+    "static/js/784.23ec3dbb.chunk.js": "/portfolio_KR/static/js/784.23ec3dbb.chunk.js",
     "static/js/453.78a80aa8.chunk.js": "/portfolio_KR/static/js/453.78a80aa8.chunk.js",
     "static/js/234.88770735.chunk.js": "/portfolio_KR/static/js/234.88770735.chunk.js",
     "static/js/256.f677dbeb.chunk.js": "/portfolio_KR/static/js/256.f677dbeb.chunk.js",
-    "static/js/33.fca32885.chunk.js": "/portfolio_KR/static/js/33.fca32885.chunk.js",
+    "static/js/976.6a07d37e.chunk.js": "/portfolio_KR/static/js/976.6a07d37e.chunk.js",
     "static/media/helloworld-RAG3.png": "/portfolio_KR/static/media/helloworld-RAG3.bc54445dab87c0bc3570.png",
     "static/media/sejongmate-poster.png": "/portfolio_KR/static/media/sejongmate-poster.176c1ac052d530c726a6.png",
     "static/media/helloworld-poster.png": "/portfolio_KR/static/media/helloworld-poster.9b59dabfdd155604f7ef.png",
@@ -21,7 +21,6 @@
     "static/media/helloworld-RAG2.png": "/portfolio_KR/static/media/helloworld-RAG2.0546b342d99a295af90c.png",
     "static/media/sejongmate-logo.png": "/portfolio_KR/static/media/sejongmate-logo.c0d4c81b5aa5e1041eff.png",
     "static/media/sejongmate-model2.png": "/portfolio_KR/static/media/sejongmate-model2.ea8993d2ccedcb9e1f1e.png",
-    "static/media/sejongmate-deploy2.png": "/portfolio_KR/static/media/sejongmate-deploy2.2ae0af7b4ea5a834b147.png",
     "static/media/sejongmate-data4.png": "/portfolio_KR/static/media/sejongmate-data4.e0d194550a3acebe2db6.png",
     "static/media/sejong-logo.svg": "/portfolio_KR/static/media/sejong-logo.dad161bd8d491daa654e6aabe9bbadb5.svg",
     "static/media/helloworld-chatbot3.png": "/portfolio_KR/static/media/helloworld-chatbot3.ee72069cfc8ff78f36af.png",
@@ -30,15 +29,15 @@
     "static/media/ETRI-logo.png": "/portfolio_KR/static/media/ETRI-logo.e76cac3d23ecd14f6679.png",
     "index.html": "/portfolio_KR/index.html",
     "main.0265fca2.css.map": "/portfolio_KR/static/css/main.0265fca2.css.map",
-    "main.a08b9ff2.js.map": "/portfolio_KR/static/js/main.a08b9ff2.js.map",
-    "784.c4494d6e.chunk.js.map": "/portfolio_KR/static/js/784.c4494d6e.chunk.js.map",
+    "main.a79848c7.js.map": "/portfolio_KR/static/js/main.a79848c7.js.map",
+    "784.23ec3dbb.chunk.js.map": "/portfolio_KR/static/js/784.23ec3dbb.chunk.js.map",
     "453.78a80aa8.chunk.js.map": "/portfolio_KR/static/js/453.78a80aa8.chunk.js.map",
     "234.88770735.chunk.js.map": "/portfolio_KR/static/js/234.88770735.chunk.js.map",
     "256.f677dbeb.chunk.js.map": "/portfolio_KR/static/js/256.f677dbeb.chunk.js.map",
-    "33.fca32885.chunk.js.map": "/portfolio_KR/static/js/33.fca32885.chunk.js.map"
+    "976.6a07d37e.chunk.js.map": "/portfolio_KR/static/js/976.6a07d37e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0265fca2.css",
-    "static/js/main.a08b9ff2.js"
+    "static/js/main.a79848c7.js"
   ]
 }
