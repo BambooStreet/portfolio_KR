@@ -130,7 +130,7 @@ const SejongmateDescription = () => {
           <div className="mb-10">
             <h3 className="text-m font-semibold mb-2">3-2. AWS EC2 인스턴스 배포</h3>
             {/* <img src={sejongmateDeploy2} alt="Data processing" className="w-3/5 mx-auto mb-4" />   */}
-            <p>AWS EC2(Elastic Compute Cloud) 인스턴스를 활용하여 LLM(Large Language Model)을 배포하고, 이를 백엔드 서비스와 연동한 확장 가능한 클라우드 기반 애플리케이션 환경을 구축했습니다.</p>
+            <li>AWS EC2(Elastic Compute Cloud) 인스턴스를 활용하여 LLM(Large Language Model)을 배포하고, 이를 백엔드 서비스와 연동한 확장 가능한 클라우드 기반 애플리케이션 환경을 구축했습니다.</li>
           </div>
 
         </div>
